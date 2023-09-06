@@ -7,66 +7,61 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		29EA84032AA6044900AEE254 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EA84022AA6044900AEE254 /* AppDelegate.swift */; };
-		29EA84052AA6044900AEE254 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EA84042AA6044900AEE254 /* SceneDelegate.swift */; };
-		29EA84072AA6044900AEE254 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EA84062AA6044900AEE254 /* ViewController.swift */; };
-		29EA840A2AA6044900AEE254 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29EA84082AA6044900AEE254 /* Main.storyboard */; };
-		29EA840C2AA6044B00AEE254 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29EA840B2AA6044B00AEE254 /* Assets.xcassets */; };
-		29EA840F2AA6044B00AEE254 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29EA840D2AA6044B00AEE254 /* LaunchScreen.storyboard */; };
-		29EA841A2AA6044B00AEE254 /* LEOassistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EA84192AA6044B00AEE254 /* LEOassistTests.swift */; };
-		29EA84242AA6044B00AEE254 /* LEOassistUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EA84232AA6044B00AEE254 /* LEOassistUITests.swift */; };
-		29EA84262AA6044B00AEE254 /* LEOassistUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EA84252AA6044B00AEE254 /* LEOassistUITestsLaunchTests.swift */; };
+		291A22D62AA9356E00B6BC51 /* LEOassistApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291A22D52AA9356E00B6BC51 /* LEOassistApp.swift */; };
+		291A22D82AA9356E00B6BC51 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291A22D72AA9356E00B6BC51 /* ContentView.swift */; };
+		291A22DA2AA9356F00B6BC51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 291A22D92AA9356F00B6BC51 /* Assets.xcassets */; };
+		291A22DD2AA9356F00B6BC51 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 291A22DC2AA9356F00B6BC51 /* Preview Assets.xcassets */; };
+		291A22E72AA9356F00B6BC51 /* LEOassistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291A22E62AA9356F00B6BC51 /* LEOassistTests.swift */; };
+		291A22F12AA9356F00B6BC51 /* LEOassistUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291A22F02AA9356F00B6BC51 /* LEOassistUITests.swift */; };
+		291A22F32AA9356F00B6BC51 /* LEOassistUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291A22F22AA9356F00B6BC51 /* LEOassistUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		29EA84162AA6044B00AEE254 /* PBXContainerItemProxy */ = {
+		291A22E32AA9356F00B6BC51 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 29EA83F72AA6044900AEE254 /* Project object */;
+			containerPortal = 291A22CA2AA9356E00B6BC51 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 29EA83FE2AA6044900AEE254;
+			remoteGlobalIDString = 291A22D12AA9356E00B6BC51;
 			remoteInfo = LEOassist;
 		};
-		29EA84202AA6044B00AEE254 /* PBXContainerItemProxy */ = {
+		291A22ED2AA9356F00B6BC51 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 29EA83F72AA6044900AEE254 /* Project object */;
+			containerPortal = 291A22CA2AA9356E00B6BC51 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 29EA83FE2AA6044900AEE254;
+			remoteGlobalIDString = 291A22D12AA9356E00B6BC51;
 			remoteInfo = LEOassist;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		29EA83FF2AA6044900AEE254 /* LEOassist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LEOassist.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		29EA84022AA6044900AEE254 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		29EA84042AA6044900AEE254 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		29EA84062AA6044900AEE254 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		29EA84092AA6044900AEE254 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		29EA840B2AA6044B00AEE254 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		29EA840E2AA6044B00AEE254 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		29EA84102AA6044B00AEE254 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		29EA84152AA6044B00AEE254 /* LEOassistTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LEOassistTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		29EA84192AA6044B00AEE254 /* LEOassistTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEOassistTests.swift; sourceTree = "<group>"; };
-		29EA841F2AA6044B00AEE254 /* LEOassistUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LEOassistUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		29EA84232AA6044B00AEE254 /* LEOassistUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEOassistUITests.swift; sourceTree = "<group>"; };
-		29EA84252AA6044B00AEE254 /* LEOassistUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEOassistUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		291A22D22AA9356E00B6BC51 /* LEOassist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LEOassist.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		291A22D52AA9356E00B6BC51 /* LEOassistApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEOassistApp.swift; sourceTree = "<group>"; };
+		291A22D72AA9356E00B6BC51 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		291A22D92AA9356F00B6BC51 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		291A22DC2AA9356F00B6BC51 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		291A22E22AA9356F00B6BC51 /* LEOassistTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LEOassistTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		291A22E62AA9356F00B6BC51 /* LEOassistTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEOassistTests.swift; sourceTree = "<group>"; };
+		291A22EC2AA9356F00B6BC51 /* LEOassistUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LEOassistUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		291A22F02AA9356F00B6BC51 /* LEOassistUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEOassistUITests.swift; sourceTree = "<group>"; };
+		291A22F22AA9356F00B6BC51 /* LEOassistUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEOassistUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		29EA83FC2AA6044900AEE254 /* Frameworks */ = {
+		291A22CF2AA9356E00B6BC51 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		29EA84122AA6044B00AEE254 /* Frameworks */ = {
+		291A22DF2AA9356F00B6BC51 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		29EA841C2AA6044B00AEE254 /* Frameworks */ = {
+		291A22E92AA9356F00B6BC51 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -76,53 +71,58 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		29EA83F62AA6044900AEE254 = {
+		291A22C92AA9356E00B6BC51 = {
 			isa = PBXGroup;
 			children = (
-				29EA84012AA6044900AEE254 /* LEOassist */,
-				29EA84182AA6044B00AEE254 /* LEOassistTests */,
-				29EA84222AA6044B00AEE254 /* LEOassistUITests */,
-				29EA84002AA6044900AEE254 /* Products */,
+				291A22D42AA9356E00B6BC51 /* LEOassist */,
+				291A22E52AA9356F00B6BC51 /* LEOassistTests */,
+				291A22EF2AA9356F00B6BC51 /* LEOassistUITests */,
+				291A22D32AA9356E00B6BC51 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		29EA84002AA6044900AEE254 /* Products */ = {
+		291A22D32AA9356E00B6BC51 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				29EA83FF2AA6044900AEE254 /* LEOassist.app */,
-				29EA84152AA6044B00AEE254 /* LEOassistTests.xctest */,
-				29EA841F2AA6044B00AEE254 /* LEOassistUITests.xctest */,
+				291A22D22AA9356E00B6BC51 /* LEOassist.app */,
+				291A22E22AA9356F00B6BC51 /* LEOassistTests.xctest */,
+				291A22EC2AA9356F00B6BC51 /* LEOassistUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		29EA84012AA6044900AEE254 /* LEOassist */ = {
+		291A22D42AA9356E00B6BC51 /* LEOassist */ = {
 			isa = PBXGroup;
 			children = (
-				29EA84022AA6044900AEE254 /* AppDelegate.swift */,
-				29EA84042AA6044900AEE254 /* SceneDelegate.swift */,
-				29EA84062AA6044900AEE254 /* ViewController.swift */,
-				29EA84082AA6044900AEE254 /* Main.storyboard */,
-				29EA840B2AA6044B00AEE254 /* Assets.xcassets */,
-				29EA840D2AA6044B00AEE254 /* LaunchScreen.storyboard */,
-				29EA84102AA6044B00AEE254 /* Info.plist */,
+				291A22D52AA9356E00B6BC51 /* LEOassistApp.swift */,
+				291A22D72AA9356E00B6BC51 /* ContentView.swift */,
+				291A22D92AA9356F00B6BC51 /* Assets.xcassets */,
+				291A22DB2AA9356F00B6BC51 /* Preview Content */,
 			);
 			path = LEOassist;
 			sourceTree = "<group>";
 		};
-		29EA84182AA6044B00AEE254 /* LEOassistTests */ = {
+		291A22DB2AA9356F00B6BC51 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				29EA84192AA6044B00AEE254 /* LEOassistTests.swift */,
+				291A22DC2AA9356F00B6BC51 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		291A22E52AA9356F00B6BC51 /* LEOassistTests */ = {
+			isa = PBXGroup;
+			children = (
+				291A22E62AA9356F00B6BC51 /* LEOassistTests.swift */,
 			);
 			path = LEOassistTests;
 			sourceTree = "<group>";
 		};
-		29EA84222AA6044B00AEE254 /* LEOassistUITests */ = {
+		291A22EF2AA9356F00B6BC51 /* LEOassistUITests */ = {
 			isa = PBXGroup;
 			children = (
-				29EA84232AA6044B00AEE254 /* LEOassistUITests.swift */,
-				29EA84252AA6044B00AEE254 /* LEOassistUITestsLaunchTests.swift */,
+				291A22F02AA9356F00B6BC51 /* LEOassistUITests.swift */,
+				291A22F22AA9356F00B6BC51 /* LEOassistUITestsLaunchTests.swift */,
 			);
 			path = LEOassistUITests;
 			sourceTree = "<group>";
@@ -130,13 +130,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		29EA83FE2AA6044900AEE254 /* LEOassist */ = {
+		291A22D12AA9356E00B6BC51 /* LEOassist */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 29EA84292AA6044B00AEE254 /* Build configuration list for PBXNativeTarget "LEOassist" */;
+			buildConfigurationList = 291A22F62AA9356F00B6BC51 /* Build configuration list for PBXNativeTarget "LEOassist" */;
 			buildPhases = (
-				29EA83FB2AA6044900AEE254 /* Sources */,
-				29EA83FC2AA6044900AEE254 /* Frameworks */,
-				29EA83FD2AA6044900AEE254 /* Resources */,
+				291A22CE2AA9356E00B6BC51 /* Sources */,
+				291A22CF2AA9356E00B6BC51 /* Frameworks */,
+				291A22D02AA9356E00B6BC51 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -144,69 +144,69 @@
 			);
 			name = LEOassist;
 			productName = LEOassist;
-			productReference = 29EA83FF2AA6044900AEE254 /* LEOassist.app */;
+			productReference = 291A22D22AA9356E00B6BC51 /* LEOassist.app */;
 			productType = "com.apple.product-type.application";
 		};
-		29EA84142AA6044B00AEE254 /* LEOassistTests */ = {
+		291A22E12AA9356F00B6BC51 /* LEOassistTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 29EA842C2AA6044B00AEE254 /* Build configuration list for PBXNativeTarget "LEOassistTests" */;
+			buildConfigurationList = 291A22F92AA9356F00B6BC51 /* Build configuration list for PBXNativeTarget "LEOassistTests" */;
 			buildPhases = (
-				29EA84112AA6044B00AEE254 /* Sources */,
-				29EA84122AA6044B00AEE254 /* Frameworks */,
-				29EA84132AA6044B00AEE254 /* Resources */,
+				291A22DE2AA9356F00B6BC51 /* Sources */,
+				291A22DF2AA9356F00B6BC51 /* Frameworks */,
+				291A22E02AA9356F00B6BC51 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				29EA84172AA6044B00AEE254 /* PBXTargetDependency */,
+				291A22E42AA9356F00B6BC51 /* PBXTargetDependency */,
 			);
 			name = LEOassistTests;
 			productName = LEOassistTests;
-			productReference = 29EA84152AA6044B00AEE254 /* LEOassistTests.xctest */;
+			productReference = 291A22E22AA9356F00B6BC51 /* LEOassistTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		29EA841E2AA6044B00AEE254 /* LEOassistUITests */ = {
+		291A22EB2AA9356F00B6BC51 /* LEOassistUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 29EA842F2AA6044B00AEE254 /* Build configuration list for PBXNativeTarget "LEOassistUITests" */;
+			buildConfigurationList = 291A22FC2AA9356F00B6BC51 /* Build configuration list for PBXNativeTarget "LEOassistUITests" */;
 			buildPhases = (
-				29EA841B2AA6044B00AEE254 /* Sources */,
-				29EA841C2AA6044B00AEE254 /* Frameworks */,
-				29EA841D2AA6044B00AEE254 /* Resources */,
+				291A22E82AA9356F00B6BC51 /* Sources */,
+				291A22E92AA9356F00B6BC51 /* Frameworks */,
+				291A22EA2AA9356F00B6BC51 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				29EA84212AA6044B00AEE254 /* PBXTargetDependency */,
+				291A22EE2AA9356F00B6BC51 /* PBXTargetDependency */,
 			);
 			name = LEOassistUITests;
 			productName = LEOassistUITests;
-			productReference = 29EA841F2AA6044B00AEE254 /* LEOassistUITests.xctest */;
+			productReference = 291A22EC2AA9356F00B6BC51 /* LEOassistUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		29EA83F72AA6044900AEE254 /* Project object */ = {
+		291A22CA2AA9356E00B6BC51 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
-					29EA83FE2AA6044900AEE254 = {
+					291A22D12AA9356E00B6BC51 = {
 						CreatedOnToolsVersion = 14.3.1;
 					};
-					29EA84142AA6044B00AEE254 = {
+					291A22E12AA9356F00B6BC51 = {
 						CreatedOnToolsVersion = 14.3.1;
-						TestTargetID = 29EA83FE2AA6044900AEE254;
+						TestTargetID = 291A22D12AA9356E00B6BC51;
 					};
-					29EA841E2AA6044B00AEE254 = {
+					291A22EB2AA9356F00B6BC51 = {
 						CreatedOnToolsVersion = 14.3.1;
-						TestTargetID = 29EA83FE2AA6044900AEE254;
+						TestTargetID = 291A22D12AA9356E00B6BC51;
 					};
 				};
 			};
-			buildConfigurationList = 29EA83FA2AA6044900AEE254 /* Build configuration list for PBXProject "LEOassist" */;
+			buildConfigurationList = 291A22CD2AA9356E00B6BC51 /* Build configuration list for PBXProject "LEOassist" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -214,37 +214,36 @@
 				en,
 				Base,
 			);
-			mainGroup = 29EA83F62AA6044900AEE254;
-			productRefGroup = 29EA84002AA6044900AEE254 /* Products */;
+			mainGroup = 291A22C92AA9356E00B6BC51;
+			productRefGroup = 291A22D32AA9356E00B6BC51 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				29EA83FE2AA6044900AEE254 /* LEOassist */,
-				29EA84142AA6044B00AEE254 /* LEOassistTests */,
-				29EA841E2AA6044B00AEE254 /* LEOassistUITests */,
+				291A22D12AA9356E00B6BC51 /* LEOassist */,
+				291A22E12AA9356F00B6BC51 /* LEOassistTests */,
+				291A22EB2AA9356F00B6BC51 /* LEOassistUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		29EA83FD2AA6044900AEE254 /* Resources */ = {
+		291A22D02AA9356E00B6BC51 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29EA840F2AA6044B00AEE254 /* LaunchScreen.storyboard in Resources */,
-				29EA840C2AA6044B00AEE254 /* Assets.xcassets in Resources */,
-				29EA840A2AA6044900AEE254 /* Main.storyboard in Resources */,
+				291A22DD2AA9356F00B6BC51 /* Preview Assets.xcassets in Resources */,
+				291A22DA2AA9356F00B6BC51 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		29EA84132AA6044B00AEE254 /* Resources */ = {
+		291A22E02AA9356F00B6BC51 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		29EA841D2AA6044B00AEE254 /* Resources */ = {
+		291A22EA2AA9356F00B6BC51 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -254,69 +253,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		29EA83FB2AA6044900AEE254 /* Sources */ = {
+		291A22CE2AA9356E00B6BC51 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29EA84072AA6044900AEE254 /* ViewController.swift in Sources */,
-				29EA84032AA6044900AEE254 /* AppDelegate.swift in Sources */,
-				29EA84052AA6044900AEE254 /* SceneDelegate.swift in Sources */,
+				291A22D82AA9356E00B6BC51 /* ContentView.swift in Sources */,
+				291A22D62AA9356E00B6BC51 /* LEOassistApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		29EA84112AA6044B00AEE254 /* Sources */ = {
+		291A22DE2AA9356F00B6BC51 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29EA841A2AA6044B00AEE254 /* LEOassistTests.swift in Sources */,
+				291A22E72AA9356F00B6BC51 /* LEOassistTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		29EA841B2AA6044B00AEE254 /* Sources */ = {
+		291A22E82AA9356F00B6BC51 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29EA84262AA6044B00AEE254 /* LEOassistUITestsLaunchTests.swift in Sources */,
-				29EA84242AA6044B00AEE254 /* LEOassistUITests.swift in Sources */,
+				291A22F32AA9356F00B6BC51 /* LEOassistUITestsLaunchTests.swift in Sources */,
+				291A22F12AA9356F00B6BC51 /* LEOassistUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		29EA84172AA6044B00AEE254 /* PBXTargetDependency */ = {
+		291A22E42AA9356F00B6BC51 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 29EA83FE2AA6044900AEE254 /* LEOassist */;
-			targetProxy = 29EA84162AA6044B00AEE254 /* PBXContainerItemProxy */;
+			target = 291A22D12AA9356E00B6BC51 /* LEOassist */;
+			targetProxy = 291A22E32AA9356F00B6BC51 /* PBXContainerItemProxy */;
 		};
-		29EA84212AA6044B00AEE254 /* PBXTargetDependency */ = {
+		291A22EE2AA9356F00B6BC51 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 29EA83FE2AA6044900AEE254 /* LEOassist */;
-			targetProxy = 29EA84202AA6044B00AEE254 /* PBXContainerItemProxy */;
+			target = 291A22D12AA9356E00B6BC51 /* LEOassist */;
+			targetProxy = 291A22ED2AA9356F00B6BC51 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
-/* Begin PBXVariantGroup section */
-		29EA84082AA6044900AEE254 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				29EA84092AA6044900AEE254 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		29EA840D2AA6044B00AEE254 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				29EA840E2AA6044B00AEE254 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
-		29EA84272AA6044B00AEE254 /* Debug */ = {
+		291A22F42AA9356F00B6BC51 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -376,7 +355,7 @@
 			};
 			name = Debug;
 		};
-		29EA84282AA6044B00AEE254 /* Release */ = {
+		291A22F52AA9356F00B6BC51 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -430,18 +409,19 @@
 			};
 			name = Release;
 		};
-		29EA842A2AA6044B00AEE254 /* Debug */ = {
+		291A22F72AA9356F00B6BC51 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"LEOassist/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = LEOassist/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -457,18 +437,19 @@
 			};
 			name = Debug;
 		};
-		29EA842B2AA6044B00AEE254 /* Release */ = {
+		291A22F82AA9356F00B6BC51 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"LEOassist/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = LEOassist/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -484,7 +465,7 @@
 			};
 			name = Release;
 		};
-		29EA842D2AA6044B00AEE254 /* Debug */ = {
+		291A22FA2AA9356F00B6BC51 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -503,7 +484,7 @@
 			};
 			name = Debug;
 		};
-		29EA842E2AA6044B00AEE254 /* Release */ = {
+		291A22FB2AA9356F00B6BC51 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -522,7 +503,7 @@
 			};
 			name = Release;
 		};
-		29EA84302AA6044B00AEE254 /* Debug */ = {
+		291A22FD2AA9356F00B6BC51 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -539,7 +520,7 @@
 			};
 			name = Debug;
 		};
-		29EA84312AA6044B00AEE254 /* Release */ = {
+		291A22FE2AA9356F00B6BC51 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -559,43 +540,43 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		29EA83FA2AA6044900AEE254 /* Build configuration list for PBXProject "LEOassist" */ = {
+		291A22CD2AA9356E00B6BC51 /* Build configuration list for PBXProject "LEOassist" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				29EA84272AA6044B00AEE254 /* Debug */,
-				29EA84282AA6044B00AEE254 /* Release */,
+				291A22F42AA9356F00B6BC51 /* Debug */,
+				291A22F52AA9356F00B6BC51 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		29EA84292AA6044B00AEE254 /* Build configuration list for PBXNativeTarget "LEOassist" */ = {
+		291A22F62AA9356F00B6BC51 /* Build configuration list for PBXNativeTarget "LEOassist" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				29EA842A2AA6044B00AEE254 /* Debug */,
-				29EA842B2AA6044B00AEE254 /* Release */,
+				291A22F72AA9356F00B6BC51 /* Debug */,
+				291A22F82AA9356F00B6BC51 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		29EA842C2AA6044B00AEE254 /* Build configuration list for PBXNativeTarget "LEOassistTests" */ = {
+		291A22F92AA9356F00B6BC51 /* Build configuration list for PBXNativeTarget "LEOassistTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				29EA842D2AA6044B00AEE254 /* Debug */,
-				29EA842E2AA6044B00AEE254 /* Release */,
+				291A22FA2AA9356F00B6BC51 /* Debug */,
+				291A22FB2AA9356F00B6BC51 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		29EA842F2AA6044B00AEE254 /* Build configuration list for PBXNativeTarget "LEOassistUITests" */ = {
+		291A22FC2AA9356F00B6BC51 /* Build configuration list for PBXNativeTarget "LEOassistUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				29EA84302AA6044B00AEE254 /* Debug */,
-				29EA84312AA6044B00AEE254 /* Release */,
+				291A22FD2AA9356F00B6BC51 /* Debug */,
+				291A22FE2AA9356F00B6BC51 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 29EA83F72AA6044900AEE254 /* Project object */;
+	rootObject = 291A22CA2AA9356E00B6BC51 /* Project object */;
 }
