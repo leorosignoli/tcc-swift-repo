@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		291A22D62AA9356E00B6BC51 /* LEOassistApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291A22D52AA9356E00B6BC51 /* LEOassistApp.swift */; };
-		291A22D82AA9356E00B6BC51 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291A22D72AA9356E00B6BC51 /* ContentView.swift */; };
+		291A22D82AA9356E00B6BC51 /* Login Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291A22D72AA9356E00B6BC51 /* Login Page.swift */; };
 		291A22DA2AA9356F00B6BC51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 291A22D92AA9356F00B6BC51 /* Assets.xcassets */; };
 		291A22DD2AA9356F00B6BC51 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 291A22DC2AA9356F00B6BC51 /* Preview Assets.xcassets */; };
 		291A22E72AA9356F00B6BC51 /* LEOassistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291A22E62AA9356F00B6BC51 /* LEOassistTests.swift */; };
 		291A22F12AA9356F00B6BC51 /* LEOassistUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291A22F02AA9356F00B6BC51 /* LEOassistUITests.swift */; };
 		291A22F32AA9356F00B6BC51 /* LEOassistUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291A22F22AA9356F00B6BC51 /* LEOassistUITestsLaunchTests.swift */; };
+		2933A3C02AA942F70015AA89 /* Main page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2933A3BF2AA942F70015AA89 /* Main page.swift */; };
+		2933A3C42AA94B140015AA89 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2933A3C32AA94B140015AA89 /* MenuView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +38,7 @@
 /* Begin PBXFileReference section */
 		291A22D22AA9356E00B6BC51 /* LEOassist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LEOassist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		291A22D52AA9356E00B6BC51 /* LEOassistApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEOassistApp.swift; sourceTree = "<group>"; };
-		291A22D72AA9356E00B6BC51 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		291A22D72AA9356E00B6BC51 /* Login Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Login Page.swift"; sourceTree = "<group>"; };
 		291A22D92AA9356F00B6BC51 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		291A22DC2AA9356F00B6BC51 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		291A22E22AA9356F00B6BC51 /* LEOassistTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LEOassistTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +46,8 @@
 		291A22EC2AA9356F00B6BC51 /* LEOassistUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LEOassistUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		291A22F02AA9356F00B6BC51 /* LEOassistUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEOassistUITests.swift; sourceTree = "<group>"; };
 		291A22F22AA9356F00B6BC51 /* LEOassistUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEOassistUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2933A3BF2AA942F70015AA89 /* Main page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Main page.swift"; sourceTree = "<group>"; };
+		2933A3C32AA94B140015AA89 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,9 +99,11 @@
 			isa = PBXGroup;
 			children = (
 				291A22D52AA9356E00B6BC51 /* LEOassistApp.swift */,
-				291A22D72AA9356E00B6BC51 /* ContentView.swift */,
+				291A22D72AA9356E00B6BC51 /* Login Page.swift */,
 				291A22D92AA9356F00B6BC51 /* Assets.xcassets */,
 				291A22DB2AA9356F00B6BC51 /* Preview Content */,
+				2933A3BF2AA942F70015AA89 /* Main page.swift */,
+				2933A3C32AA94B140015AA89 /* MenuView.swift */,
 			);
 			path = LEOassist;
 			sourceTree = "<group>";
@@ -257,8 +263,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				291A22D82AA9356E00B6BC51 /* ContentView.swift in Sources */,
+				291A22D82AA9356E00B6BC51 /* Login Page.swift in Sources */,
+				2933A3C42AA94B140015AA89 /* MenuView.swift in Sources */,
 				291A22D62AA9356E00B6BC51 /* LEOassistApp.swift in Sources */,
+				2933A3C02AA942F70015AA89 /* Main page.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
