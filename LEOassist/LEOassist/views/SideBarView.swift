@@ -2,6 +2,8 @@ import SwiftUI
 
 struct NavigationViewWithSidebar<Content: View>: View {
     @State private var showMenu = false // to control showing and hiding of the menu
+    @State var profile: Profile
+
     let content: Content
     
     init(@ViewBuilder content: () -> Content) {
@@ -44,16 +46,22 @@ struct NavigationViewWithSidebar<Content: View>: View {
                     }
                 }
             }
+            .navigationBarBackButtonHidden(true)
+            .navigationBarItems(leading: EmptyView())
+
             .gesture(drag)
         }
     }
 }
 
 struct MenuView: View {
+    
+    
     var body: some View {
+
         VStack(alignment: .leading) {
-            NavigationLink(destination: MainPage()) {
-                Text("Direction one")
+            NavigationLink(destination: MyProfileView() {
+                Text("Meu Perfil")
                     .padding(.top, 100)
             }
             NavigationLink(destination: Text("Direction two")) {

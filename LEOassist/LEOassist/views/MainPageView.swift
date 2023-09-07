@@ -1,10 +1,11 @@
 
 import SwiftUI
 
-struct MainPage: View {
+struct MainPageView: View {
     @State var selectedDate: Date = Date()
 
-        
+    @State var profile: Profile
+
     var body: some View {
         NavigationViewWithSidebar {
             VStack {
@@ -27,6 +28,8 @@ struct MainPage: View {
                 Spacer()
                     .frame(height: 300)// defines flexible space that expands along the major axis of its containing stack layout
             }
+            .navigationBarBackButtonHidden(true)
+            .navigationBarItems(leading: EmptyView())
             .padding(.vertical, 100)
         }
     }
@@ -34,6 +37,6 @@ struct MainPage: View {
 
 struct MainPage_Previews: PreviewProvider {
     static var previews: some View {
-        MainPage()
+        MainPageView()
     }
 }
