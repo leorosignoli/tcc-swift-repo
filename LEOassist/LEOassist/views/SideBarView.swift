@@ -2,14 +2,13 @@ import SwiftUI
 
 struct NavigationViewWithSidebar<Content: View>: View {
     @State private var showMenu = false // to control showing and hiding of the menu
-    @State var profile: Profile
 
     let content: Content
     
     init(@ViewBuilder content: () -> Content) {
-        self.content = content()
-    }
-    
+         self.content = content()
+     }
+        
     var body: some View {
         let drag = DragGesture()
             .onEnded {
@@ -56,17 +55,18 @@ struct NavigationViewWithSidebar<Content: View>: View {
 
 struct MenuView: View {
     
-    
     var body: some View {
-
         VStack(alignment: .leading) {
-            NavigationLink(destination: MyProfileView() {
+            NavigationLink(destination: MyProfileView()) {
                 Text("Meu Perfil")
                     .padding(.top, 100)
             }
+
             NavigationLink(destination: Text("Direction two")) {
-                Text("Direction two").padding(.top, 20)
+                Text("Direction two")
+                    .padding(.top, 20)
             }
+
             Spacer()
         }
         .padding()
