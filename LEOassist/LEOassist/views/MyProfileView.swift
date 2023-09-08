@@ -31,9 +31,9 @@ struct MyProfileView: View {
                     .padding([.top, .bottom], 10)
 
                 
-                Text("Email Verificado: ")
+                Text("Email Verificado? ")
                     .font(.subheadline) +
-                Text(userProfile.emailVerified ? " Yes" : " No")
+                Text(userProfile.emailVerified ? " Sim" : "Não")
                     .font(.subheadline)
                 if(!userProfile.emailVerified ){
                     Spacer()
