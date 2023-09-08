@@ -22,6 +22,7 @@
 		293A25F82AA984FF003228B4 /* MyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A25F72AA984FF003228B4 /* MyProfileView.swift */; };
 		293A25FB2AA985F5003228B4 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 293A25FA2AA985F5003228B4 /* SDWebImageSwiftUI */; };
 		293A25FF2AA98F4B003228B4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A25FE2AA98F4B003228B4 /* Constants.swift */; };
+		29C8D5C32AABB34C00C2D2D1 /* GreekLetterAnimatedText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C8D5C22AABB34C00C2D2D1 /* GreekLetterAnimatedText.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		293A25F52AA979FB003228B4 /* Auth0.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
 		293A25F72AA984FF003228B4 /* MyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileView.swift; sourceTree = "<group>"; };
 		293A25FE2AA98F4B003228B4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		29C8D5C22AABB34C00C2D2D1 /* GreekLetterAnimatedText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreekLetterAnimatedText.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 		291A22D42AA9356E00B6BC51 /* LEOassist */ = {
 			isa = PBXGroup;
 			children = (
+				29C8D5C12AABB32400C2D2D1 /* Animations */,
 				293A26002AA9914D003228B4 /* views */,
 				293A25F42AA979E0003228B4 /* resources */,
 				293A25EE2AA9780F003228B4 /* models */,
@@ -171,6 +174,14 @@
 				293A25F72AA984FF003228B4 /* MyProfileView.swift */,
 			);
 			path = views;
+			sourceTree = "<group>";
+		};
+		29C8D5C12AABB32400C2D2D1 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				29C8D5C22AABB34C00C2D2D1 /* GreekLetterAnimatedText.swift */,
+			);
+			path = Animations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,6 +328,7 @@
 				2933A3C42AA94B140015AA89 /* SideBarView.swift in Sources */,
 				291A22D62AA9356E00B6BC51 /* LEOassistApp.swift in Sources */,
 				293A25F82AA984FF003228B4 /* MyProfileView.swift in Sources */,
+				29C8D5C32AABB34C00C2D2D1 /* GreekLetterAnimatedText.swift in Sources */,
 				2933A3C02AA942F70015AA89 /* MainPageView.swift in Sources */,
 				293A25FF2AA98F4B003228B4 /* Constants.swift in Sources */,
 			);

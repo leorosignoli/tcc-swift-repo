@@ -15,7 +15,8 @@ struct LEOassistApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                LoginPageView() 
+                LoginPageView()
+                    .environmentObject(Profile.empty)
 
 
             }

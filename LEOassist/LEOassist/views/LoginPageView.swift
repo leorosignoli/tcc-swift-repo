@@ -4,7 +4,7 @@ import Auth0
 struct LoginPageView: View {
     
     @State private var isAuthenticated: Bool = false
-    @State var userProfile = Profile.empty
+    @EnvironmentObject var userProfile : Profile
 
     
     var body: some View {
@@ -68,7 +68,7 @@ extension LoginPageView {
                     
                 case .success(let credentials):
                     self.isAuthenticated = true
-                    self.userProfile = Profile.from(credentials.idToken)
+                    self.userProfile.update(from : credentials.idToken)
                     
                     print("user: \(userProfile)")
                     print("Credentials: \(credentials)")

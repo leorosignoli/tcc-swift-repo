@@ -56,28 +56,33 @@ struct NavigationViewWithSidebar<Content: View>: View {
 struct MenuView: View {
     
     @State private var showLoginPage = true
+    
 
     
     var body: some View {
         VStack(alignment: .leading) {
 
-            NavigationLink(destination: MyProfileView(userProfile: Profile.from(Constants.MOCK_TOKEN))) {
-                Text("Meu Perfil")
+            NavigationLink(destination: MyProfileView()) {
+                GreekLetterAnimatedText(text: "Meu Perfil")
                     .padding(.top, 100)
             }
+            .navigationBarBackButtonHidden(true)
+            .navigationBarItems(leading: EmptyView())
             
             Divider()
             
             NavigationLink(destination: Text("Direction two")) {
-                Text("Direction two")
+                GreekLetterAnimatedText(text: "Agendα")
                 
             }
+            .navigationBarBackButtonHidden(true)
+            .navigationBarItems(leading: EmptyView())
             
             Spacer()
             Divider()
             
             
-            Button("Fazer Logout") {
+            Button("# Logout") {
                 self.showLoginPage = true
             }
             .foregroundColor(Color.red)
@@ -94,5 +99,6 @@ struct SidebarView_preview: PreviewProvider {
     static var previews: some View {
         NavigationViewWithSidebar {
         }
+        .environmentObject(Profile.from(Constants.MOCK_TOKEN))
     }
 }

@@ -51,4 +51,41 @@ class Profile: ObservableObject {
 
         return Profile(name: name, email: email, emailVerified: emailVerified, picture: picture, updatedAt: updatedAt)
     }
+    
+    func update(from idToken: String) {
+        guard let jwt = try? decode(jwt: idToken) else {
+            print("Failed to decode JWT")
+            return
+        }
+
+        if let name = jwt.claim(name: "name").string {
+            self.name = name
+        } else {
+            print("Error: Name not found in the JWT")
+        }
+
+        if let email = jwt.claim(name: "email").string {
+            self.email = email
+        } else {
+            print("Error: Email not found in the JWT")
+        }
+
+        if let emailVerified = jwt.claim(name: "email_verified").boolean {
+            self.emailVerified = emailVerified
+        } else {
+            print("Error: Email verification status not found in the JWT")
+        }
+
+        if let picture = jwt.claim(name: "picture").string {
+            self.picture = picture
+        } else {
+            print("Error: Picture not found in the JWT")
+        }
+
+        if let updatedAt = jwt.claim(name: "updated_at").string {
+            self.updatedAt = updatedAt
+        } else {
+            print("Error: Updated At not found in the JWT")
+        }
+    }
 }
