@@ -45,6 +45,7 @@ struct LoginPageView: View {
                     NavigationLink("", destination: MainPageView(),
                                    isActive: $isAuthenticated)
                         .hidden()
+                        .navigationBarBackButtonHidden(true)
                     
                 }
                 .padding([.leading, .trailing], 20)
@@ -72,7 +73,8 @@ extension LoginPageView {
                 case .success(let credentials):
                     self.isAuthenticated = true
                     self.userProfile = Profile.from(credentials.idToken)
-
+                    
+                    print("user: \(userProfile)")
                     print("Credentials: \(credentials)")
                     print("ID token: \(credentials.idToken)")
                 }

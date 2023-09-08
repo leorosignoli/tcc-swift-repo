@@ -2,30 +2,34 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 struct MyProfileView: View {
-    @State var profile: Profile
+    @EnvironmentObject var userProfile: Profile
+
 
     var body: some View {
         VStack(alignment: .leading) {
             
             // Profile Picture
-            WebImage(url: URL(string: profile.picture))
+            WebImage(url: URL(string: userProfile.picture))
                 .resizable()
                 .scaledToFit()
                 .clipShape(Circle())
                 .frame(width: 100, height: 100)
             
             // Profile Details
-            Text("Name: \(profile.name)")
+            Text("Name: \(userProfile.name)")
                 .font(.headline)
                 .padding(.top, 10)
             
-            Text("Email: \(profile.email)")
+            Text("Email: \(userProfile.email)")
                 .font(.subheadline)
             
-            Text("Email Verified: \(profile.emailVerified)")
-                .font(.subheadline)
+            Text("Email Verified:")
+                            .font(.subheadline) +
+                        Text(userProfile.emailVerified ? " Yes" : " No")
+                            .font(.subheadline)
+                        
             
-            Text("Updated At: \(profile.updatedAt)")
+            Text("Updated At: \(userProfile.updatedAt)")
                 .font(.subheadline)
             
             Spacer()
@@ -36,6 +40,6 @@ struct MyProfileView: View {
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        MyProfileView(profile: Profile.from(Constants.mockToken))
+        MyProfileView()
     }
 }

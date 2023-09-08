@@ -1,65 +1,36 @@
-//
-//  Profile.swift
-//  iOS SwiftUI Login
-//
-//  Created by Auth0 on 7/18/22.
-//  Companion project for the Auth0 video
-//  “Integrating Auth0 within a SwiftUI app”
-//
-//  Licensed under the Apache 2.0 license
-//  (https://www.apache.org/licenses/LICENSE-2.0)
-//
-
-
+import Combine
 import JWTDecode
 
-
-struct Profile {
-  
-  let id: String
-  let name: String
-  let email: String
-  let emailVerified: String
-  let picture: String
-  let updatedAt: String
-
-}
-
-
-extension Profile {
-  
-  static var empty: Self {
-    return Profile(
-      id: "",
-      name: "",
-      email: "",
-      emailVerified: "",
-      picture: "",
-      updatedAt: ""
-    )
-  }
-
-  static func from(_ idToken: String) -> Self {
-    guard
-      let jwt = try? decode(jwt: idToken),
-      let id = jwt.subject,
-      let name = jwt.claim(name: "name").string,
-      let email = jwt.claim(name: "email").string,
-      let emailVerified = jwt.claim(name: "email_verified").boolean,
-      let picture = jwt.claim(name: "picture").string,
-      let updatedAt = jwt.claim(name: "updated_at").string
-    else {
-      return .empty
+class Profile: ObservableObject {
+    @Published var name: String
+    @Published var email: String
+    @Published var emailVerified: Bool
+    @Published var picture: String
+    @Published var updatedAt: String
+    
+    init(name: String, email: String, emailVerified: Bool, picture: String, updatedAt: String) {
+        self.name = name
+        self.email = email
+        self.emailVerified = emailVerified
+        self.picture = picture
+        self.updatedAt = updatedAt
     }
-
-    return Profile(
-      id: id,
-      name: name,
-      email: email,
-      emailVerified: String(describing: emailVerified),
-      picture: picture,
-      updatedAt: updatedAt
-    )
-  }
-  
+    
+    static let empty = Profile(name: "", email: "", emailVerified: false, picture: "", updatedAt: "")
+    
+    static func from(_ idToken: String) -> Profile {
+        guard
+            let jwt = try? decode(jwt: idToken),
+            let id = jwt.subject,
+            let name = jwt.claim(name: "name").string,
+            let email = jwt.claim(name: "email").string,
+            let emailVerified = jwt.claim(name: "email_verified").boolean,
+            let picture = jwt.claim(name: "picture").string,
+            let updatedAt = jwt.claim(name: "updated_at").string
+        else {
+            return Profile.empty
+        }
+        
+        return Profile(name: name, email: email, emailVerified: emailVerified, picture: picture, updatedAt: updatedAt)
+    }
 }

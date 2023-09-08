@@ -10,6 +10,8 @@ import SwiftUI
 @main
 struct LEOassistApp: App {
     
+    @StateObject var userProfile = Profile.empty
+
     var body: some Scene {
         WindowGroup {
             NavigationView {
