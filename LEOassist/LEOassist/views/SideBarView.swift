@@ -55,23 +55,44 @@ struct NavigationViewWithSidebar<Content: View>: View {
 
 struct MenuView: View {
     
+    @State private var showLoginPage = true
+
+    
     var body: some View {
         VStack(alignment: .leading) {
-            NavigationLink(destination: MyProfileView()) {
+
+            NavigationLink(destination: MyProfileView(userProfile: Profile.from(Constants.MOCK_TOKEN))) {
                 Text("Meu Perfil")
                     .padding(.top, 100)
             }
-
+            
+            Divider()
+            
             NavigationLink(destination: Text("Direction two")) {
                 Text("Direction two")
-                    .padding(.top, 20)
+                
             }
-
+            
             Spacer()
+            Divider()
+            
+            
+            Button("Fazer Logout") {
+                self.showLoginPage = true
+            }
+            .foregroundColor(Color.red)
         }
+          
         .padding()
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(Color.white)
-        .edgesIgnoringSafeArea(.all)
+        .edgesIgnoringSafeArea(.top)
+    }
+}
+
+struct SidebarView_preview: PreviewProvider {
+    static var previews: some View {
+        NavigationViewWithSidebar {
+        }
     }
 }

@@ -13,51 +13,47 @@ struct LoginPageView: View {
                     Image("LOGO")
                         .resizable()
                         .scaledToFit()
-                        .padding(.bottom, 40)
+                        .frame(height: 300)
+                        .padding(.bottom, 160)
+
                     
-                    VStack {
-                        
                         Button(action: {
                             print("Login button pressed")
                             login()
                         }) {
                           
-                                Text("Log In")
+                                Text("Fazer Log-in")
                                     .frame(minWidth: 0, maxWidth: .infinity)
                                     .frame(height: 50)
                                     .foregroundColor(.white)
                                     .font(.system(size: 14, weight: .bold))
-                                    .background(Color.blue)
-                                    .cornerRadius(15)
+                                    .background(Color.black)
+                                    .cornerRadius(30)
                         
                         }
-                        .padding([.leading, .trailing], 15)
+                        .padding([.leading, .trailing], 20)
                         .padding(.bottom, 20)
-                    }
-                    .padding(.top, 20)
-                    .padding([.leading, .trailing], 5)
-                    .background(Color.white)
-                    .cornerRadius(10)
-                    .shadow(radius: 40)
+                        .padding(.top, 20)
+                        .background(Color.white)
+                        .cornerRadius(10)
+                        .shadow(radius: 40)
                     
                     Spacer()
+                        .frame(height: 60)
                     
                     NavigationLink("", destination: MainPageView(),
                                    isActive: $isAuthenticated)
                         .hidden()
+                        .navigationBarItems(leading: EmptyView())
                         .navigationBarBackButtonHidden(true)
                     
                 }
                 .padding([.leading, .trailing], 20)
             }
             .navigationBarBackButtonHidden(true)
+            .navigationBarItems(leading: EmptyView())
         }
     
-    func isValidEmail(testStr:String) -> Bool {
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        return emailTest.evaluate(with: testStr)
-    }
 }
 
 extension LoginPageView {

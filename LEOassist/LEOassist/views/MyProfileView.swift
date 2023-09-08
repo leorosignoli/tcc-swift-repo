@@ -1,45 +1,61 @@
 import SwiftUI
 import SDWebImageSwiftUI
+import Auth0
+
 
 struct MyProfileView: View {
-    @EnvironmentObject var userProfile: Profile
+    @ObservedObject var userProfile: Profile
 
 
     var body: some View {
+        NavigationViewWithSidebar {
+        
         VStack(alignment: .leading) {
             
             // Profile Picture
-            WebImage(url: URL(string: userProfile.picture))
-                .resizable()
-                .scaledToFit()
-                .clipShape(Circle())
-                .frame(width: 100, height: 100)
+            VStack{
+                WebImage(url: URL(string: userProfile.picture))
+                    .resizable()
+                    .scaledToFit()
+                    .clipShape(Circle())
+                    .frame(width: 100, height: 100)
+                
+                Text("\(userProfile.name)")
+                    .padding([.top, .bottom], 10)
+                    .font(.headline)
+                Divider()
+                // Profile Details
+
+                Text(" Email # \(userProfile.email)")
+                    .font(.subheadline)
+                    .padding([.top, .bottom], 10)
+
+                
+                Text("Email Verificado: ")
+                    .font(.subheadline) +
+                Text(userProfile.emailVerified ? " Yes" : " No")
+                    .font(.subheadline)
+                if(!userProfile.emailVerified ){
+                    Spacer()
+                    Text("Verificar e-mail")
+                        .foregroundColor(.blue)
+                }
+                
+            }
+            .padding(30)
             
-            // Profile Details
-            Text("Name: \(userProfile.name)")
-                .font(.headline)
-                .padding(.top, 10)
             
-            Text("Email: \(userProfile.email)")
-                .font(.subheadline)
             
-            Text("Email Verified:")
-                            .font(.subheadline) +
-                        Text(userProfile.emailVerified ? " Yes" : " No")
-                            .font(.subheadline)
-                        
-            
-            Text("Updated At: \(userProfile.updatedAt)")
-                .font(.subheadline)
             
             Spacer()
             
         }.padding()
     }
+    }
 }
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        MyProfileView()
-    }
+        MyProfileView(userProfile : Profile.from(Constants.MOCK_TOKEN))
+     }
 }
