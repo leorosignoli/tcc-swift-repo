@@ -19,7 +19,7 @@ struct MainPageView: View {
                 HStack{
                      
                     IntegratedPlatformsButton(text:"iOS"){
-                        integrateiOSCalendar()
+                        getiOSCalendarData()
                     }
                       
                     
@@ -62,7 +62,7 @@ extension MainPageView {
         let endDate: Date
     }
 
-    func integrateiOSCalendar()  {
+    func getiOSCalendarData()  {
         var events: [Event] = []
 
         let store = EKEventStore()
