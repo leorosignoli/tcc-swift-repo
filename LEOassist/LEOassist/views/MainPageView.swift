@@ -39,7 +39,8 @@ struct MainPageView: View {
                     .animation(.spring(), value: selectedDate)
                     .frame(width: 500)
                 
-                Divider().frame(height: 1)
+                Divider()
+                    .frame(height: 1)
                 
                 DatePicker("Selecione uma data", selection: $selectedDate, displayedComponents: [.date])
                     .padding(.horizontal)
