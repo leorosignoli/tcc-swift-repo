@@ -1,6 +1,7 @@
 import SwiftUI
 import Auth0
 
+
 struct LoginPageView: View {
     
     @State private var isAuthenticated: Bool = false
