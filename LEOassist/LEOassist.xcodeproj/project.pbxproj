@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		291565182AAD099800C29F4F /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291565172AAD099800C29F4F /* Buttons.swift */; };
 		291A22D62AA9356E00B6BC51 /* LEOassistApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291A22D52AA9356E00B6BC51 /* LEOassistApp.swift */; };
 		291A22D82AA9356E00B6BC51 /* LoginPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291A22D72AA9356E00B6BC51 /* LoginPageView.swift */; };
 		291A22DA2AA9356F00B6BC51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 291A22D92AA9356F00B6BC51 /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		291565172AAD099800C29F4F /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		291A22D22AA9356E00B6BC51 /* LEOassist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LEOassist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		291A22D52AA9356E00B6BC51 /* LEOassistApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEOassistApp.swift; sourceTree = "<group>"; };
 		291A22D72AA9356E00B6BC51 /* LoginPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageView.swift; sourceTree = "<group>"; };
@@ -91,6 +93,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		291565162AAD098000C29F4F /* components */ = {
+			isa = PBXGroup;
+			children = (
+				291565172AAD099800C29F4F /* Buttons.swift */,
+			);
+			path = components;
+			sourceTree = "<group>";
+		};
 		291A22C92AA9356E00B6BC51 = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +124,7 @@
 		291A22D42AA9356E00B6BC51 /* LEOassist */ = {
 			isa = PBXGroup;
 			children = (
+				291565162AAD098000C29F4F /* components */,
 				29C8D5C12AABB32400C2D2D1 /* animations */,
 				293A26002AA9914D003228B4 /* views */,
 				293A25F42AA979E0003228B4 /* resources */,
@@ -331,6 +342,7 @@
 				293A25F02AA97829003228B4 /* Profile.swift in Sources */,
 				2933A3C42AA94B140015AA89 /* SideBarView.swift in Sources */,
 				291A22D62AA9356E00B6BC51 /* LEOassistApp.swift in Sources */,
+				291565182AAD099800C29F4F /* Buttons.swift in Sources */,
 				293A25F82AA984FF003228B4 /* MyProfileView.swift in Sources */,
 				29C8D5C32AABB34C00C2D2D1 /* GreekLetterAnimatedText.swift in Sources */,
 				2933A3C02AA942F70015AA89 /* MainPageView.swift in Sources */,
@@ -493,8 +505,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LEOassist/Preview Content\"";
+				DEVELOPMENT_TEAM = DLGF89B725;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "Esse aplicativo precisa da sua permissão para gerenciar seu calendário.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -521,8 +535,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LEOassist/Preview Content\"";
+				DEVELOPMENT_TEAM = DLGF89B725;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "Esse aplicativo precisa da sua permissão para gerenciar seu calendário.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

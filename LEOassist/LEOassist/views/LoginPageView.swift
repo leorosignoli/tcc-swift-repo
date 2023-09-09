@@ -17,7 +17,8 @@ struct LoginPageView: View {
                     .scaledToFit()
                     .frame(height: 300)
                     .padding(.bottom, 1)
-                GreekLetterAnimatedText(text: "Where your Calendar Meets Intelligence")
+                GreekLetterAnimatedText(text: "Where your Calendar Meets Intelligence.")
+                
                     .font(.headline)
                 
               

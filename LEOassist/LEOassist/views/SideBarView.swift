@@ -45,11 +45,11 @@ struct NavigationViewWithSidebar<Content: View>: View {
                     }
                 }
             }
-            .navigationBarBackButtonHidden(true)
-            .navigationBarItems(leading: EmptyView())
 
             .gesture(drag)
         }
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: EmptyView())
     }
 }
 
@@ -62,21 +62,22 @@ struct MenuView: View {
     var body: some View {
         VStack(alignment: .leading) {
 
-            NavigationLink(destination: MyProfileView()) {
-                GreekLetterAnimatedText(text: "Meu Perfil")
-                    .padding(.top, 100)
+            NavigationLink(destination: MainPageView()) {
+                GreekLetterAnimatedText(text: "Agenda")
+                    .padding(.top, 110)
             }
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading: EmptyView())
             
             Divider()
             
-            NavigationLink(destination: Text("Direction two")) {
-                GreekLetterAnimatedText(text: "Agendα")
+            NavigationLink(destination: MyProfileView()) {
+                GreekLetterAnimatedText(text: "Meu Perfil")
                 
             }
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading: EmptyView())
+            Divider()
             
             Spacer()
             Divider()

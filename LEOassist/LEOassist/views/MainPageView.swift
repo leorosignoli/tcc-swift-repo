@@ -5,6 +5,10 @@ import EventKit
 
 struct MainPageView: View {
     @State var selectedDate: Date = Date()
+    @State private var isModalPresented = false  // to control the presentation of the modal
+    @State private var events: [EKEvent]?
+
+
 
 
     var body: some View {
@@ -19,9 +23,36 @@ struct MainPageView: View {
                 HStack{
                      
                     IntegratedPlatformsButton(text:"iOS"){
+                        isModalPresented = true
                         getiOSCalendarData()
                     }
-                      
+                    .sheet(isPresented: $isModalPresented) {
+                        
+                        VStack{
+                            if let unwrappedEvents = events {
+                                    VStack {
+                                        ForEach(unwrappedEvents, id: \.eventIdentifier) { event in
+                                            Group {
+                                                Text("Title: \(event.title ?? "")")
+                                                Text("Start Date: \(event.startDate.description)")
+                                                Text("End Date: \(event.endDate.description)")
+                                                Text("~-~-~-~-~-~-~-~")
+                                            }
+                                        }
+                                        Spacer()
+                                        AddEventsButton(){
+                                            
+                                        }
+                                    }
+                                } else {
+                                    Text("Não foram encontrados eventos no seu calendário.")
+                                }
+
+                        }
+                        .onDisappear(){
+                            isModalPresented = false
+                        }
+                    }
                     
                     IntegratedPlatformsButton(text:"Outlook") {
                         
@@ -31,7 +62,7 @@ struct MainPageView: View {
                     }
                     
                 }
-                Text(selectedDate.formatted(date: .abbreviated, time: .omitted))
+                GreekLetterAnimatedText(text: selectedDate.formatted(date: .abbreviated, time: .omitted))
                     .font(.system(size: 28))
                     .bold()
                     .foregroundColor(Color.accentColor)
@@ -48,83 +79,51 @@ struct MainPageView: View {
                 
                 Spacer().frame(height: 300)
             }
-            .navigationBarBackButtonHidden(true)
-            .navigationBarItems(leading: EmptyView())
+        
             .padding(.vertical, 100)
         }
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: EmptyView())
     }
 }
 
 extension MainPageView {
-    
-    struct Event: Encodable {
-        let title: String
-        let startDate: Date
-        let endDate: Date
-    }
 
-    func getiOSCalendarData()  {
-        var events: [Event] = []
 
-        let store = EKEventStore()
-
-        let calendars = store.calendars(for: .event)
-
-        for calendar in calendars {
-            if calendar.title == "Work" {
-                let oneMonthAgo = Date(timeIntervalSinceNow: -30*24*3600)
-                let oneMonthAfter = Date(timeIntervalSinceNow: 30*24*3600)
-                let predicate = store.predicateForEvents(withStart: oneMonthAgo, end: oneMonthAfter, calendars: [calendar])
-                let calendarEvents = store.events(matching: predicate)
-
-                for event in calendarEvents {
-                    let eventObj = Event(
-                        title: event.title,
-                        startDate: event.startDate,
-                        endDate: event.endDate
-                    )
-                    events.append(eventObj)
-                }
+    func getiOSCalendarData() {
+            let eventStore = EKEventStore()
+            
+            switch EKEventStore.authorizationStatus(for: .event) {
+            case .authorized:
+                getCalendarEvents(eventStore: eventStore)
+            case .notDetermined:
+                eventStore.requestAccess(to: .event, completion: { (granted, error) in
+                    if granted {
+                        DispatchQueue.main.async {
+                            self.getCalendarEvents(eventStore: eventStore)
+                        }
+                    }
+                })
+            default:
+                print("Access denied")
             }
         }
-
-        let dataObj = ["data": events]
-
-        let encoder = JSONEncoder()
-        guard let jsonData = try? encoder.encode(dataObj) else {
-            print("Failed to turn events to json")
-            return
-        }
-        print(jsonData)
         
-    }
+        func getCalendarEvents(eventStore: EKEventStore) {
+            let startDate = Date().addingTimeInterval(-60*60*24) // 1 day before now
+            let endDate = Date().addingTimeInterval(60*60*24*30) // 30 days after now
+            let predicate = eventStore.predicateForEvents(withStart: startDate, end: endDate, calendars: nil)
+            let events = eventStore.events(matching: predicate)
+            self.events = events
+        }
+    
 }
+ 
 
+//Preview
 struct MainPage_Previews: PreviewProvider {
     static var previews: some View {
         MainPageView()
-    }
-}
-
-
-struct IntegratedPlatformsButton: View{
-    var text: String
-    var action: () -> Void
-    
-    var body: some View {
-        Button(action: action) {
-            GreekLetterAnimatedText(text: text)
-                .frame(minWidth: 0, maxWidth: .infinity)
-                .frame(height: 50)
-                .foregroundColor(.white)
-                .font(.system(size: 14, weight: .bold))
-                .background(.black)
-                .cornerRadius(30)
-        }
-        .padding([.leading, .trailing], 20)
-        .padding(.bottom, 20)
-        .padding(.top, 20)
-        .cornerRadius(10)
-        .shadow(radius: 5)
+            .environmentObject(Profile.from(Constants.MOCK_TOKEN))
     }
 }
