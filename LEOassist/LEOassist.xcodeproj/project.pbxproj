@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		291A22D62AA9356E00B6BC51 /* LEOassistApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291A22D52AA9356E00B6BC51 /* LEOassistApp.swift */; };
-		291A22D82AA9356E00B6BC51 /* LoginPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291A22D72AA9356E00B6BC51 /* LoginPageView.swift */; };
+		291A22D82AA9356E00B6BC51 /* Login Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291A22D72AA9356E00B6BC51 /* Login Page.swift */; };
 		291A22DA2AA9356F00B6BC51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 291A22D92AA9356F00B6BC51 /* Assets.xcassets */; };
 		291A22DD2AA9356F00B6BC51 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 291A22DC2AA9356F00B6BC51 /* Preview Assets.xcassets */; };
 		291A22E72AA9356F00B6BC51 /* LEOassistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291A22E62AA9356F00B6BC51 /* LEOassistTests.swift */; };
@@ -46,7 +46,7 @@
 /* Begin PBXFileReference section */
 		291A22D22AA9356E00B6BC51 /* LEOassist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LEOassist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		291A22D52AA9356E00B6BC51 /* LEOassistApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEOassistApp.swift; sourceTree = "<group>"; };
-		291A22D72AA9356E00B6BC51 /* LoginPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageView.swift; sourceTree = "<group>"; };
+		291A22D72AA9356E00B6BC51 /* Login Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Login Page.swift"; sourceTree = "<group>"; };
 		291A22D92AA9356F00B6BC51 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		291A22DC2AA9356F00B6BC51 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		291A22E22AA9356F00B6BC51 /* LEOassistTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LEOassistTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,8 +69,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				293A25FB2AA985F5003228B4 /* SDWebImageSwiftUI in Frameworks */,
-				293A25F32AA97942003228B4 /* Auth0 in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,8 +117,11 @@
 				293A25F42AA979E0003228B4 /* resources */,
 				293A25EE2AA9780F003228B4 /* models */,
 				291A22D52AA9356E00B6BC51 /* LEOassistApp.swift */,
+				291A22D72AA9356E00B6BC51 /* Login Page.swift */,
 				291A22D92AA9356F00B6BC51 /* Assets.xcassets */,
 				291A22DB2AA9356F00B6BC51 /* Preview Content */,
+				2933A3BF2AA942F70015AA89 /* Main page.swift */,
+				2933A3C32AA94B140015AA89 /* MenuView.swift */,
 			);
 			path = LEOassist;
 			sourceTree = "<group>";
@@ -203,10 +204,6 @@
 			dependencies = (
 			);
 			name = LEOassist;
-			packageProductDependencies = (
-				293A25F22AA97942003228B4 /* Auth0 */,
-				293A25FA2AA985F5003228B4 /* SDWebImageSwiftUI */,
-			);
 			productName = LEOassist;
 			productReference = 291A22D22AA9356E00B6BC51 /* LEOassist.app */;
 			productType = "com.apple.product-type.application";
@@ -279,10 +276,6 @@
 				Base,
 			);
 			mainGroup = 291A22C92AA9356E00B6BC51;
-			packageReferences = (
-				293A25F12AA97942003228B4 /* XCRemoteSwiftPackageReference "Auth0" */,
-				293A25F92AA985F5003228B4 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
-			);
 			productRefGroup = 291A22D32AA9356E00B6BC51 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -300,7 +293,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				291A22DD2AA9356F00B6BC51 /* Preview Assets.xcassets in Resources */,
-				293A25F62AA979FB003228B4 /* Auth0.plist in Resources */,
 				291A22DA2AA9356F00B6BC51 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,10 +323,7 @@
 				293A25F02AA97829003228B4 /* Profile.swift in Sources */,
 				2933A3C42AA94B140015AA89 /* SideBarView.swift in Sources */,
 				291A22D62AA9356E00B6BC51 /* LEOassistApp.swift in Sources */,
-				293A25F82AA984FF003228B4 /* MyProfileView.swift in Sources */,
-				29C8D5C32AABB34C00C2D2D1 /* GreekLetterAnimatedText.swift in Sources */,
-				2933A3C02AA942F70015AA89 /* MainPageView.swift in Sources */,
-				293A25FF2AA98F4B003228B4 /* Constants.swift in Sources */,
+				2933A3C02AA942F70015AA89 /* Main page.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -653,38 +642,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		293A25F12AA97942003228B4 /* XCRemoteSwiftPackageReference "Auth0" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/auth0/Auth0.swift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
-			};
-		};
-		293A25F92AA985F5003228B4 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		293A25F22AA97942003228B4 /* Auth0 */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 293A25F12AA97942003228B4 /* XCRemoteSwiftPackageReference "Auth0" */;
-			productName = Auth0;
-		};
-		293A25FA2AA985F5003228B4 /* SDWebImageSwiftUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 293A25F92AA985F5003228B4 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
-			productName = SDWebImageSwiftUI;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 291A22CA2AA9356E00B6BC51 /* Project object */;
 }
