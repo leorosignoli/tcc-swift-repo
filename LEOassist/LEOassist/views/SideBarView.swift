@@ -2,12 +2,13 @@ import SwiftUI
 
 struct NavigationViewWithSidebar<Content: View>: View {
     @State private var showMenu = false // to control showing and hiding of the menu
+
     let content: Content
     
     init(@ViewBuilder content: () -> Content) {
-        self.content = content()
-    }
-    
+         self.content = content()
+     }
+        
     var body: some View {
         let drag = DragGesture()
             .onEnded {
@@ -44,26 +45,60 @@ struct NavigationViewWithSidebar<Content: View>: View {
                     }
                 }
             }
+            .navigationBarBackButtonHidden(true)
+            .navigationBarItems(leading: EmptyView())
+
             .gesture(drag)
         }
     }
 }
 
 struct MenuView: View {
+    
+    @State private var showLoginPage = true
+    
+
+    
     var body: some View {
         VStack(alignment: .leading) {
-            NavigationLink(destination: MainPage()) {
-                Text("Direction one")
+
+            NavigationLink(destination: MyProfileView()) {
+                GreekLetterAnimatedText(text: "Meu Perfil")
                     .padding(.top, 100)
             }
+            .navigationBarBackButtonHidden(true)
+            .navigationBarItems(leading: EmptyView())
+            
+            Divider()
+            
             NavigationLink(destination: Text("Direction two")) {
-                Text("Direction two").padding(.top, 20)
+                GreekLetterAnimatedText(text: "Agendα")
+                
             }
+            .navigationBarBackButtonHidden(true)
+            .navigationBarItems(leading: EmptyView())
+            
             Spacer()
+            Divider()
+            
+            
+            Button("# Logout") {
+                self.showLoginPage = true
+            }
+            .foregroundColor(Color.red)
         }
+          
         .padding()
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(Color.white)
-        .edgesIgnoringSafeArea(.all)
+        .edgesIgnoringSafeArea(.top)
+    }
+}
+
+struct SidebarView_preview: PreviewProvider {
+    static var previews: some View {
+        NavigationViewWithSidebar {
+        }
+        .environmentObject(Profile.from(Constants.MOCK_TOKEN))
     }
 }
