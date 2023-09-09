@@ -3,10 +3,10 @@ import SwiftUI
 import EventKit
 
 
-struct MainPage: View {
+struct MainPageView: View {
     @State var selectedDate: Date = Date()
 
-        
+
     var body: some View {
         NavigationViewWithSidebar {
             
@@ -38,17 +38,17 @@ struct MainPage: View {
                     .padding()
                     .animation(.spring(), value: selectedDate)
                     .frame(width: 500)
-                    
+                
                 Divider().frame(height: 1)
                 
-                DatePicker("Select Date", selection: $selectedDate, displayedComponents: [.date])
+                DatePicker("Selecione uma data", selection: $selectedDate, displayedComponents: [.date])
                     .padding(.horizontal)
                     .datePickerStyle(.graphical)
-             
                 
-                Spacer()
-                    .frame(height: 300)// defines flexible space that expands along the major axis of its containing stack layout
+                Spacer().frame(height: 300)
             }
+            .navigationBarBackButtonHidden(true)
+            .navigationBarItems(leading: EmptyView())
             .padding(.vertical, 100)
         }
     }
@@ -101,7 +101,7 @@ extension MainPageView {
 
 struct MainPage_Previews: PreviewProvider {
     static var previews: some View {
-        MainPage()
+        MainPageView()
     }
 }
 
