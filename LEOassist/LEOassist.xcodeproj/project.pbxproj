@@ -24,6 +24,8 @@
 		293A25F82AA984FF003228B4 /* MyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A25F72AA984FF003228B4 /* MyProfileView.swift */; };
 		293A25FB2AA985F5003228B4 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 293A25FA2AA985F5003228B4 /* SDWebImageSwiftUI */; };
 		293A25FF2AA98F4B003228B4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A25FE2AA98F4B003228B4 /* Constants.swift */; };
+		296E82502AAE491E005F7AE4 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296E824F2AAE491E005F7AE4 /* DateUtils.swift */; };
+		296E82522AAE51AD005F7AE4 /* NewEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296E82512AAE51AD005F7AE4 /* NewEventView.swift */; };
 		29C8D5C32AABB34C00C2D2D1 /* GreekLetterAnimatedText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C8D5C22AABB34C00C2D2D1 /* GreekLetterAnimatedText.swift */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +65,8 @@
 		293A25F52AA979FB003228B4 /* Auth0.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
 		293A25F72AA984FF003228B4 /* MyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileView.swift; sourceTree = "<group>"; };
 		293A25FE2AA98F4B003228B4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		296E824F2AAE491E005F7AE4 /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
+		296E82512AAE51AD005F7AE4 /* NewEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventView.swift; sourceTree = "<group>"; };
 		29C8D5C22AABB34C00C2D2D1 /* GreekLetterAnimatedText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreekLetterAnimatedText.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -124,6 +128,7 @@
 		291A22D42AA9356E00B6BC51 /* LEOassist */ = {
 			isa = PBXGroup;
 			children = (
+				296E824E2AAE48FC005F7AE4 /* utils */,
 				291565162AAD098000C29F4F /* components */,
 				29C8D5C12AABB32400C2D2D1 /* animations */,
 				293A26002AA9914D003228B4 /* views */,
@@ -186,8 +191,17 @@
 				2933A3BF2AA942F70015AA89 /* MainPageView.swift */,
 				2933A3C32AA94B140015AA89 /* SideBarView.swift */,
 				293A25F72AA984FF003228B4 /* MyProfileView.swift */,
+				296E82512AAE51AD005F7AE4 /* NewEventView.swift */,
 			);
 			path = views;
+			sourceTree = "<group>";
+		};
+		296E824E2AAE48FC005F7AE4 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				296E824F2AAE491E005F7AE4 /* DateUtils.swift */,
+			);
+			path = utils;
 			sourceTree = "<group>";
 		};
 		29C8D5C12AABB32400C2D2D1 /* animations */ = {
@@ -337,9 +351,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				296E82502AAE491E005F7AE4 /* DateUtils.swift in Sources */,
 				291A22D82AA9356E00B6BC51 /* LoginPageView.swift in Sources */,
 				2937265A2AACB74500D877AF /* Event.swift in Sources */,
 				293A25F02AA97829003228B4 /* Profile.swift in Sources */,
+				296E82522AAE51AD005F7AE4 /* NewEventView.swift in Sources */,
 				2933A3C42AA94B140015AA89 /* SideBarView.swift in Sources */,
 				291A22D62AA9356E00B6BC51 /* LEOassistApp.swift in Sources */,
 				291565182AAD099800C29F4F /* Buttons.swift in Sources */,

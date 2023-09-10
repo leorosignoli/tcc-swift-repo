@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Event: Encodable {
+struct CreateEventsClientRequestBody: Encodable {
     let title: String
     let startDate: Date
     let endDate: Date
