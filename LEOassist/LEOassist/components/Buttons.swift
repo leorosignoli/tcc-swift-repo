@@ -11,8 +11,9 @@ struct IntegratedPlatformsButton: View {
             HStack{
                 GreekLetterAnimatedText(text: text)
                     .frame(minWidth: 0, maxWidth: .infinity)
-                    .foregroundColor(.black)
                     .font(.system(size: 14, weight: .bold))
+                    
+
 
                 icon
                     .resizable() // Make the icon resizable
@@ -24,7 +25,7 @@ struct IntegratedPlatformsButton: View {
         }
         .overlay(
                    RoundedRectangle(cornerRadius: 15)
-                       .stroke(Color.black, lineWidth: 2)
+                       .stroke(Color("blackwhite"), lineWidth: 2)
                )
         .padding([.leading, .trailing], 5)
         .padding(.bottom, 20)
@@ -48,6 +49,7 @@ struct AddNewEventButton: View{
         
     }
 }
+
 
 struct AddEventsButton: View{
     var text: String = "Sincronizar eventos"

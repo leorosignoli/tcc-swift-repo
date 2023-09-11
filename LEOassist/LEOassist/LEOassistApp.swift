@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+import AVKit
+
 @main
 struct LEOassistApp: App {
     
@@ -22,4 +24,7 @@ struct LEOassistApp: App {
             }
         }
     }
+    
 }
+
+

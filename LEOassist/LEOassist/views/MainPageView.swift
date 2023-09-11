@@ -15,8 +15,9 @@ struct MainPageView: View {
 
     var body: some View {
         NavigationViewWithSidebar {
-            
+       
             VStack {
+                
                 
                 GreekLetterAnimatedText(text: "Sincronizar com... ")
                     .padding(.bottom , 10)
@@ -59,11 +60,14 @@ struct MainPageView: View {
                 
                 
             }
-        
+            .DefaultBackground()
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: EmptyView())
+        
     }
+    
+        
 }
 
 extension MainPageView {

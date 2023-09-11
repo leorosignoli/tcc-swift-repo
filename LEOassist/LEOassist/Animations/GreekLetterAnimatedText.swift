@@ -31,6 +31,10 @@ struct GreekLetterAnimatedText: View {
                 }
                 let _ = displayLink
             }
+            .foregroundColor(Color("blackwhite"))
+        
+        
+
     }
     
     private func generateRandomGreekLetter() -> Character {
@@ -99,3 +103,4 @@ struct GreekLetterAnimatedTextTranslationVariation: View {
         return randomGreekLetter
     }
 }
+

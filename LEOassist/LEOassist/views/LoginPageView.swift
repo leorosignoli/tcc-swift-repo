@@ -1,5 +1,7 @@
 import SwiftUI
 import Auth0
+import AVKit
+
 
 struct LoginPageView: View {
     
@@ -8,10 +10,8 @@ struct LoginPageView: View {
     
     var body: some View {
         NavigationView {
-            
+
             VStack(alignment: .center) {
-                
-                
                 Image("LOGO")
                     .resizable()
                     .scaledToFit()
@@ -42,6 +42,7 @@ struct LoginPageView: View {
                 .padding(.top, 20)
                 .cornerRadius(10)
                 .shadow(radius: 40)
+                .foregroundColor(Color("blackwhite"))
                 
                 NavigationLink("", destination: MainPageView(),
                                isActive: $isAuthenticated)
@@ -69,11 +70,12 @@ struct LoginPageView: View {
                                                     .init(color: .black, location: 1),
                                                     .init(color: .clear, location: 1)
                                                 ]), startPoint: .bottom, endPoint: .top))
-                                        .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 1.5)
-                                        
-                                    
-            )
+                                        .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 1.5))
+
+          
+        
         }
+
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: EmptyView())
     

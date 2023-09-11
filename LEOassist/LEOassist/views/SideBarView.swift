@@ -34,7 +34,6 @@ struct NavigationViewWithSidebar<Content: View>: View {
                             }
                         )
                         .frame(width: geometry.size.width, height: geometry.size.height)
-                        .background(Color.white)
                         .offset(x: self.showMenu ? geometry.size.width/2 : 0)
                         .disabled(self.showMenu ? true : false)
                     
@@ -88,12 +87,12 @@ struct MenuView: View {
             }
             .foregroundColor(Color.red)
         }
-          
         .padding()
         .frame(maxWidth: .infinity, alignment: .leading)
-        .background(Color.white)
         .edgesIgnoringSafeArea(.top)
+        .SideBarBackground()
     }
+    
 }
 
 struct SidebarView_preview: PreviewProvider {

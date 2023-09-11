@@ -26,6 +26,8 @@
 		293A25FF2AA98F4B003228B4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A25FE2AA98F4B003228B4 /* Constants.swift */; };
 		296E82502AAE491E005F7AE4 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296E824F2AAE491E005F7AE4 /* DateUtils.swift */; };
 		296E82522AAE51AD005F7AE4 /* NewEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296E82512AAE51AD005F7AE4 /* NewEventView.swift */; };
+		2972B2E92AAF9F3900E1AEB8 /* SPLASH-SCREEN.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2972B2E82AAF9F3900E1AEB8 /* SPLASH-SCREEN.mp4 */; };
+		2972B2EB2AAFA4D800E1AEB8 /* Backgrounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2972B2EA2AAFA4D800E1AEB8 /* Backgrounds.swift */; };
 		29C8D5C32AABB34C00C2D2D1 /* GreekLetterAnimatedText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C8D5C22AABB34C00C2D2D1 /* GreekLetterAnimatedText.swift */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +69,8 @@
 		293A25FE2AA98F4B003228B4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		296E824F2AAE491E005F7AE4 /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		296E82512AAE51AD005F7AE4 /* NewEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventView.swift; sourceTree = "<group>"; };
+		2972B2E82AAF9F3900E1AEB8 /* SPLASH-SCREEN.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SPLASH-SCREEN.mp4"; sourceTree = "<group>"; };
+		2972B2EA2AAFA4D800E1AEB8 /* Backgrounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Backgrounds.swift; sourceTree = "<group>"; };
 		29C8D5C22AABB34C00C2D2D1 /* GreekLetterAnimatedText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreekLetterAnimatedText.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				291565172AAD099800C29F4F /* Buttons.swift */,
+				2972B2EA2AAFA4D800E1AEB8 /* Backgrounds.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -178,6 +183,7 @@
 		293A25F42AA979E0003228B4 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				2972B2E82AAF9F3900E1AEB8 /* SPLASH-SCREEN.mp4 */,
 				293A25F52AA979FB003228B4 /* Auth0.plist */,
 				293A25FE2AA98F4B003228B4 /* Constants.swift */,
 			);
@@ -324,6 +330,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2972B2E92AAF9F3900E1AEB8 /* SPLASH-SCREEN.mp4 in Resources */,
 				291A22DD2AA9356F00B6BC51 /* Preview Assets.xcassets in Resources */,
 				293A25F62AA979FB003228B4 /* Auth0.plist in Resources */,
 				291A22DA2AA9356F00B6BC51 /* Assets.xcassets in Resources */,
@@ -352,6 +359,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				296E82502AAE491E005F7AE4 /* DateUtils.swift in Sources */,
+				2972B2EB2AAFA4D800E1AEB8 /* Backgrounds.swift in Sources */,
 				291A22D82AA9356E00B6BC51 /* LoginPageView.swift in Sources */,
 				2937265A2AACB74500D877AF /* Event.swift in Sources */,
 				293A25F02AA97829003228B4 /* Profile.swift in Sources */,
