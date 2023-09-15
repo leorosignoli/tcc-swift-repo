@@ -1,5 +1,6 @@
 
 import SwiftUI
+import EventKit
 
 struct IntegratedPlatformsButton: View {
     var text: String
@@ -50,13 +51,18 @@ struct AddNewEventButton: View{
     }
 }
 
-
 struct AddEventsButton: View{
     var text: String = "Sincronizar eventos"
     var action: () -> Void
+    @ObservedObject var events: Events
+    @EnvironmentObject var userProfile : Profile
 
     var body: some View {
-        Button(action: action) {
+        Button(action: {
+            EventsService.syncEvents(userProfile: userProfile, events: events) {
+                action()
+            }
+        }) {
             HStack {
                 Text(text)
                     .frame(minWidth: 0, maxWidth: .infinity)
@@ -81,13 +87,12 @@ struct AddEventsButton: View{
     }
 }
 
-
 struct ButtonsPreview: PreviewProvider {
     static var previews: some View {
         VStack{
             AddNewEventButton()
             IntegratedPlatformsButton(text: "example", icon: Image("GOOGLE_CALENDAR_ICON"), action:  {})
-            AddEventsButton(action:  {})
+            AddEventsButton(action:  {}, events: Events() )
         }
         
     }

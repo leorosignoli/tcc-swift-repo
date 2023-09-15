@@ -154,10 +154,9 @@ extension MainPageView {
                     }
                     .padding([.leading, .trailing], 10)
                     Spacer()
-                    AddEventsButton {
-                        // TODO: Integrate with api
+                    AddEventsButton (action: {
                         isModalPresented = false
-                    }
+                    }, events: events)
                     .padding([.leading, .trailing], 20)
                 } else {
                     Spacer()
