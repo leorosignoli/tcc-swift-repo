@@ -1,193 +1,125 @@
-
 import SwiftUI
 import EventKit
-
+import SDWebImageSwiftUI
 
 struct MainPageView: View {
     @State var selectedDate: Date = Date()
     @State private var isModalPresented = false  // to control the presentation of the modal
     @StateObject private var events = Events()
-    let eventStore = EKEventStore() 
+    @EnvironmentObject var userProfile: Profile
+    @State private var apiEvents: [Event] = []
 
+    let eventStore = EKEventStore()
 
-
-
+    let iosService = IOSService()
 
     var body: some View {
         NavigationViewWithSidebar {
-       
             VStack {
-                
-                
                 GreekLetterAnimatedText(text: "Sincronizar com... ")
-                    .padding(.bottom , 10)
-                    .padding(.top, 10)
-                
                 HStack{
-                     
                     integratedPlatformsButtonWithSheet(text: "iOS", icon: Image(systemName: "calendar"), action: {
-                                    getiOSCalendarData()
-                                })
-                    
+                        iosService.getiOSCalendarData { eventStore, events in
+                            if let events = events {
+                                self.events.items = events
+                                self.presentModal()
+                            }
+                        }
+                    })
                     integratedPlatformsButtonWithSheet(text: "Outlook", icon: Image("OUTLOOK_CALENDAR_ICON"), action: {
                         isModalPresented = true
-                        
                     })
                     integratedPlatformsButtonWithSheet(text: "Google", icon: Image("GOOGLE_CALENDAR_ICON"), action: {
                         isModalPresented = true
-                        
                     })
-                    
                 }
-                GreekLetterAnimatedText(text: selectedDate.formatted(date: .abbreviated, time: .omitted))
-                    .font(.system(size: 28))
-                    .bold()
-                    .foregroundColor(Color.accentColor)
-                    .padding()
-                    .animation(.spring(), value: selectedDate)
-                    .frame(width: 500)
-                
                 Divider()
                     .frame(height: 1)
-                
-                DatePicker("Selecione uma data", selection: $selectedDate, displayedComponents: [.date])
+                UICalendarViewRepresentable(selectedDate: $selectedDate, events: $apiEvents)
                     .padding(.horizontal)
-                    .datePickerStyle(.graphical)
-                    
-                
+                    .onAppear {
+                                    EventsService.fetchEvents(owner: userProfile.email) { events in
+                                        self.apiEvents = events
+                                    }
+                    }
                 AddNewEventButton()
-                .padding(.top, 200)
-                
-                
+                    .padding(.top, 140)
             }
             .DefaultBackground()
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: EmptyView())
-        
-    }
-    
-        
-}
-
-extension MainPageView {
-
-
-    func getiOSCalendarData() {
-        
-        switch EKEventStore.authorizationStatus(for: .event) {
-        case .authorized:
-            getCalendarEvents(eventStore: eventStore)
-        case .notDetermined:
-            eventStore.requestAccess(to: .event, completion: { (granted, error) in
-                if granted {
-                    DispatchQueue.main.async {
-                        let newEventStore = EKEventStore() // New instance after access granted
-                        self.getCalendarEvents(eventStore: newEventStore)
-                    }
-                }
-            })
-        default:
-            print("Access denied")
-        }
     }
 
-    func getCalendarEvents(eventStore: EKEventStore) {
-        let startDate = Date().addingTimeInterval(-60*60*24) // 1 day before now
-        let endDate = Date().addingTimeInterval(60*60*24*30) // 30 days after now
-        let predicate = eventStore.predicateForEvents(withStart: startDate, end: endDate, calendars: nil)
-        let events = eventStore.events(matching: predicate)
-
-        self.events.items = events
-
-        self.events.items?.forEach { event in
-                print("Found event: \(event.title ?? "N/A")")
-            }
-        
-        
-        DispatchQueue.main.async {
-            self.events.items = nil // Clear events items before reassigning
-            self.events.items = events
-            print("Found \(self.events.items?.count ?? 0) events")
-            self.presentModal()
-            
-        }
-    }
+ 
 
     func presentModal() {
         self.isModalPresented = true
     }
-    
 
-    
     func integratedPlatformsButtonWithSheet(text: String, icon: Image, action: @escaping () -> Void) -> some View {
         IntegratedPlatformsButton(text: text, icon: icon) {
             DispatchQueue.main.async {
                 events.items = nil // Clear events.items before fetching new events
-
                 action()
             }
         }
         .sheet(isPresented: $isModalPresented) {
-            sheetContent()
+            IntegrationEventsModalView(isModalPresented: $isModalPresented, events: events)
         }
     }
-    
-    func sheetContent() -> some View {
-        VStack{
-            VStack {
-               
-                if events.items != nil {
-                    List(events.items!, id: \.eventIdentifier) { event in
-                        VStack(alignment: .leading, spacing: 10) {
-                            Text(event.title ?? "")
-                                .font(.headline)
-                            Text("Início: \(dateFormatter.string(from: event.startDate))")
-                                .font(.subheadline)
-                                .foregroundColor(.secondary)
-                            Text("Fim: \(dateFormatter.string(from: event.startDate))")
-                                .font(.subheadline)
-                                .foregroundColor(.secondary)
-                            Divider()
-                        }
-                        .padding([.top, .bottom], 10)
-                    }
-                    .padding([.leading, .trailing], 10)
-                    Spacer()
-                    AddEventsButton (action: {
-                        isModalPresented = false
-                    }, events: events)
-                    .padding([.leading, .trailing], 20)
-                } else {
-                    Spacer()
-
-                    Text("Não foram encontrados eventos no calendário.")
-                        .padding(.bottom, 350)
-                        .padding([.leading, .trailing], 30)
-                    
-                    Button(action: {
-                        self.isModalPresented = false
-                    }) {
-                        Text("Fechar")
-                            .frame(width: 100, height: 50)
-                            .background(Color.red)
-                            .foregroundColor(.white)
-                            .cornerRadius(20)
-                            .padding(.bottom, 50)
-                    }
-                }
-            }
-        }
-        .onDisappear(){
-            isModalPresented = false
-        }
-    }
-
-
 }
- 
+
 class Events: ObservableObject {
     @Published var items: [EKEvent]?
+}
+
+struct UICalendarViewRepresentable: UIViewRepresentable {
+    @Binding var selectedDate: Date
+    @Binding var events: [Event]
+    @EnvironmentObject var userProfile: Profile
+
+    func makeUIView(context: Context) -> UICalendarView {
+        let calendarView = UICalendarView()
+        calendarView.calendar = .current
+        calendarView.locale = .current
+        calendarView.fontDesign = .rounded
+        calendarView.delegate = context.coordinator
+        calendarView.layer.cornerRadius = 12
+        calendarView.backgroundColor = .systemBackground
+        return calendarView
+    }
+
+    func updateUIView(_ uiView: UICalendarView, context: Context) {
+        // Update the view if needed
+    }
+
+    func makeCoordinator() -> Coordinator {
+        Coordinator(self)
+    }
+
+    class Coordinator: NSObject, UICalendarViewDelegate {
+        var parent: UICalendarViewRepresentable
+
+        init(_ parent: UICalendarViewRepresentable) {
+            self.parent = parent
+        }
+
+        func calendarView(_ calendarView: UICalendarView, decorationFor dateComponents: DateComponents) -> UICalendarView.Decoration? {
+            // Check if there is an event for the date and return a decoration if there is
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+            for event in parent.events {
+                if let startDate = dateFormatter.date(from: event.startDate),
+                   let endDate = dateFormatter.date(from: event.endDate),
+                   let date = calendarView.calendar.date(from: dateComponents),
+                   startDate <= date && date <= endDate {
+                    return UICalendarView.Decoration.default(color: .systemGreen, size: .large)
+                }
+            }
+            return nil
+        }
+    }
 }
 
 //Preview

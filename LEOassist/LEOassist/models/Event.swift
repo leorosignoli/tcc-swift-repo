@@ -12,3 +12,11 @@ struct CreateEventsClientRequestBody: Encodable {
     let startDate: Date
     let endDate: Date
 }
+
+
+struct Event: Codable, Identifiable {
+    let id: String
+    let title: String
+    let startDate: String
+    let endDate: String
+}

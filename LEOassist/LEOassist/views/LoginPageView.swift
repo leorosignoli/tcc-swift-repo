@@ -7,22 +7,21 @@ struct LoginPageView: View {
     
     @State private var isAuthenticated: Bool = false
     @EnvironmentObject var userProfile : Profile
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         NavigationView {
 
             VStack(alignment: .center) {
-                Image("LOGO")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(height: 300)
-                    .padding(.bottom, 1)
+
                 GreekLetterAnimatedText(text: "Where your Calendar Meets Intelligence.")
+                    .padding(.top, 400)
+                    
                 
                     .font(.headline)
                 
               
-                
+                Spacer()
 
                 
                 Button(action: {
@@ -30,19 +29,20 @@ struct LoginPageView: View {
                 }) {
                     GreekLetterAnimatedText(text: "Fazer Log-in".uppercased())
                         .frame(minWidth: 0, maxWidth: .infinity)
-                        .frame(height: 50)
+                        .frame(height: 70)
                         .foregroundColor(.white)
                         .font(.system(size: 14, weight: .bold))
-                        .background(.black)
+                        .background(Color("theme_white"))
                         .cornerRadius(30)
+                        .padding(.top, 30)
                 
                 }
-                .padding([.leading, .trailing], 20)
-                .padding(.bottom, 20)
+                .padding([.leading, .trailing], 40)
+                .frame(height: 300)
+                .padding(.bottom, 70)
                 .padding(.top, 20)
                 .cornerRadius(10)
-                .shadow(radius: 40)
-                .foregroundColor(Color("blackwhite"))
+                .shadow( color: .black, radius: 30)
                 
                 NavigationLink("", destination: MainPageView(),
                                isActive: $isAuthenticated)
@@ -50,27 +50,18 @@ struct LoginPageView: View {
                     .navigationBarItems(leading: EmptyView())
                     .navigationBarBackButtonHidden(true)
                     
-                Spacer()
-                    .frame(height: 60)
+                
                     
                  
                     
             }
             .padding([.leading, .trailing], 20)
             .background(
-                Image("WHITE_GOLDEN_MARBLE")
+                Image(colorScheme == .dark ? "DARK_LOGIN" : "NORMAL_LOGIN")
                     .resizable()
-                                        .scaledToFill()
-                                        .frame(maxWidth: .infinity, maxHeight: UIScreen.main.bounds.height / 2)
-                                        .rotationEffect(.degrees(90))
-                                        .edgesIgnoringSafeArea(.all)
-                                        .mask(LinearGradient(gradient: Gradient(stops: [
-                                            .init(color: .black, location: 0.3),
-                                                    .init(color: .clear, location: 1),
-                                                    .init(color: .black, location: 1),
-                                                    .init(color: .clear, location: 1)
-                                                ]), startPoint: .bottom, endPoint: .top))
-                                        .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 1.5))
+                    .aspectRatio(contentMode: .fill)
+                    .ignoresSafeArea()
+            )
 
           
         

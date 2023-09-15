@@ -31,7 +31,7 @@ struct GreekLetterAnimatedText: View {
                 }
                 let _ = displayLink
             }
-            .foregroundColor(Color("blackwhite"))
+            .foregroundColor(Color("theme_black"))
         
         
 

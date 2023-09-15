@@ -37,4 +37,24 @@ class EventsService {
         }
         task.resume()
     }
+    
+    
+    static func fetchEvents(owner: String, completion: @escaping ([Event]) -> Void) {
+            guard let encodedOwner = owner.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
+                print("Error: Unable to percent-encode owner string")
+                return
+            }
+            let url = URL(string: ApplicationSecrets.GET_ALL_EVENTS_ENDPOINT.replacing("{OWNER}", with: encodedOwner))!
+            print("Making api call to: \(url)")
+            URLSession.shared.dataTask(with: url) { (data, response, error) in
+                if let data = data {
+                    let decoder = JSONDecoder()
+                    if let events = try? decoder.decode([Event].self, from: data) {
+                        DispatchQueue.main.async {
+                            completion(events)
+                        }
+                    }
+                }
+            }.resume()
+        }
 }

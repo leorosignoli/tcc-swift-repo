@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2905D2D22AB4FF360054894E /* IOSService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2905D2D12AB4FF360054894E /* IOSService.swift */; };
+		2905D2D42AB5049A0054894E /* AddEventsModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2905D2D32AB5049A0054894E /* AddEventsModalView.swift */; };
 		291565182AAD099800C29F4F /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291565172AAD099800C29F4F /* Buttons.swift */; };
 		291A22D62AA9356E00B6BC51 /* LEOassistApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291A22D52AA9356E00B6BC51 /* LEOassistApp.swift */; };
 		291A22D82AA9356E00B6BC51 /* LoginPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291A22D72AA9356E00B6BC51 /* LoginPageView.swift */; };
@@ -52,6 +54,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2905D2D12AB4FF360054894E /* IOSService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSService.swift; sourceTree = "<group>"; };
+		2905D2D32AB5049A0054894E /* AddEventsModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventsModalView.swift; sourceTree = "<group>"; };
 		291565172AAD099800C29F4F /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		291A22D22AA9356E00B6BC51 /* LEOassist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LEOassist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		291A22D52AA9356E00B6BC51 /* LEOassistApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEOassistApp.swift; sourceTree = "<group>"; };
@@ -209,6 +213,7 @@
 				2933A3C32AA94B140015AA89 /* SideBarView.swift */,
 				293A25F72AA984FF003228B4 /* MyProfileView.swift */,
 				296E82512AAE51AD005F7AE4 /* NewEventView.swift */,
+				2905D2D32AB5049A0054894E /* AddEventsModalView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -225,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				29BFD4732AB407ED004C39BB /* EventsService.swift */,
+				2905D2D12AB4FF360054894E /* IOSService.swift */,
 			);
 			path = services;
 			sourceTree = "<group>";
@@ -378,11 +384,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				29BFD4762AB41707004C39BB /* ApplicationSecrets.swift in Sources */,
+				2905D2D42AB5049A0054894E /* AddEventsModalView.swift in Sources */,
 				296E82502AAE491E005F7AE4 /* DateUtils.swift in Sources */,
 				2972B2EB2AAFA4D800E1AEB8 /* Backgrounds.swift in Sources */,
 				291A22D82AA9356E00B6BC51 /* LoginPageView.swift in Sources */,
 				2937265A2AACB74500D877AF /* Event.swift in Sources */,
 				293A25F02AA97829003228B4 /* Profile.swift in Sources */,
+				2905D2D22AB4FF360054894E /* IOSService.swift in Sources */,
 				296E82522AAE51AD005F7AE4 /* NewEventView.swift in Sources */,
 				2933A3C42AA94B140015AA89 /* SideBarView.swift in Sources */,
 				291A22D62AA9356E00B6BC51 /* LEOassistApp.swift in Sources */,
