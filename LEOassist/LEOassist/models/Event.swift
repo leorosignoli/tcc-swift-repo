@@ -19,4 +19,6 @@ struct Event: Codable, Identifiable {
     let title: String
     let startDate: String
     let endDate: String
+    
+    
 }

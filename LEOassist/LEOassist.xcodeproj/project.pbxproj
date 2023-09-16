@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2905D2D22AB4FF360054894E /* IOSService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2905D2D12AB4FF360054894E /* IOSService.swift */; };
 		2905D2D42AB5049A0054894E /* AddEventsModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2905D2D32AB5049A0054894E /* AddEventsModalView.swift */; };
+		2905D2D62AB536930054894E /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2905D2D52AB536930054894E /* CalendarView.swift */; };
 		291565182AAD099800C29F4F /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291565172AAD099800C29F4F /* Buttons.swift */; };
 		291A22D62AA9356E00B6BC51 /* LEOassistApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291A22D52AA9356E00B6BC51 /* LEOassistApp.swift */; };
 		291A22D82AA9356E00B6BC51 /* LoginPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291A22D72AA9356E00B6BC51 /* LoginPageView.swift */; };
@@ -56,6 +57,7 @@
 /* Begin PBXFileReference section */
 		2905D2D12AB4FF360054894E /* IOSService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSService.swift; sourceTree = "<group>"; };
 		2905D2D32AB5049A0054894E /* AddEventsModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventsModalView.swift; sourceTree = "<group>"; };
+		2905D2D52AB536930054894E /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		291565172AAD099800C29F4F /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		291A22D22AA9356E00B6BC51 /* LEOassist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LEOassist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		291A22D52AA9356E00B6BC51 /* LEOassistApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEOassistApp.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 				293A25F72AA984FF003228B4 /* MyProfileView.swift */,
 				296E82512AAE51AD005F7AE4 /* NewEventView.swift */,
 				2905D2D32AB5049A0054894E /* AddEventsModalView.swift */,
+				2905D2D52AB536930054894E /* CalendarView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -395,6 +398,7 @@
 				2933A3C42AA94B140015AA89 /* SideBarView.swift in Sources */,
 				291A22D62AA9356E00B6BC51 /* LEOassistApp.swift in Sources */,
 				291565182AAD099800C29F4F /* Buttons.swift in Sources */,
+				2905D2D62AB536930054894E /* CalendarView.swift in Sources */,
 				29BFD4702AB3F91C004C39BB /* SaveAllEventsRequestBody.swift in Sources */,
 				29BFD4742AB407ED004C39BB /* EventsService.swift in Sources */,
 				293A25F82AA984FF003228B4 /* MyProfileView.swift in Sources */,

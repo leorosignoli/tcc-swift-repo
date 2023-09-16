@@ -3,11 +3,11 @@ import EventKit
 import SDWebImageSwiftUI
 
 struct MainPageView: View {
-    @State var selectedDate: Date = Date()
+    @State var selectedDate : Date?
     @State private var isModalPresented = false  // to control the presentation of the modal
     @StateObject private var events = Events()
     @EnvironmentObject var userProfile: Profile
-    @State private var apiEvents: [Event] = []
+    @State  var selectedtDateEvents: [Event] = []
 
     let eventStore = EKEventStore()
 
@@ -35,17 +35,42 @@ struct MainPageView: View {
                 }
                 Divider()
                     .frame(height: 1)
-                UICalendarViewRepresentable(selectedDate: $selectedDate, events: $apiEvents)
-                    .padding(.horizontal)
-                    .onAppear {
-                                    EventsService.fetchEvents(owner: userProfile.email) { events in
-                                        self.apiEvents = events
-                                    }
+                CalendarView(selectedDate : $selectedDate, selectedDateEvents: $selectedtDateEvents)
+                    .scaledToFit()
+                
+               
+                    if !selectedtDateEvents.isEmpty{
+                        List(selectedtDateEvents, id: \.id) { event in
+                            VStack(alignment: .leading, spacing: 10) {
+                                Text(event.title)
+                                    .font(.headline)
+                                Text("Início: \(event.startDate)")
+                                    .font(.subheadline)
+                                    .foregroundColor(.secondary)
+                                Text("Fim: \(event.startDate)")
+                                    .font(.subheadline)
+                                    .foregroundColor(.secondary)
+                                Divider()
+                            }
+                            .padding([.top, .bottom], 10)
+                            
+                        }
+                        .padding([.leading, .trailing], 15)
+                        .foregroundColor(.primary)
+
+                        .cornerRadius( 20)
+                        
+                    } else {
+                        Text("Sem eventos na data selecionada.")
+                            
                     }
+                
+                
+                
+                
                 AddNewEventButton()
-                    .padding(.top, 140)
+                    .padding(.top, 50)
             }
-            .DefaultBackground()
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: EmptyView())
@@ -74,58 +99,17 @@ class Events: ObservableObject {
     @Published var items: [EKEvent]?
 }
 
-struct UICalendarViewRepresentable: UIViewRepresentable {
-    @Binding var selectedDate: Date
-    @Binding var events: [Event]
-    @EnvironmentObject var userProfile: Profile
-
-    func makeUIView(context: Context) -> UICalendarView {
-        let calendarView = UICalendarView()
-        calendarView.calendar = .current
-        calendarView.locale = .current
-        calendarView.fontDesign = .rounded
-        calendarView.delegate = context.coordinator
-        calendarView.layer.cornerRadius = 12
-        calendarView.backgroundColor = .systemBackground
-        return calendarView
-    }
-
-    func updateUIView(_ uiView: UICalendarView, context: Context) {
-        // Update the view if needed
-    }
-
-    func makeCoordinator() -> Coordinator {
-        Coordinator(self)
-    }
-
-    class Coordinator: NSObject, UICalendarViewDelegate {
-        var parent: UICalendarViewRepresentable
-
-        init(_ parent: UICalendarViewRepresentable) {
-            self.parent = parent
-        }
-
-        func calendarView(_ calendarView: UICalendarView, decorationFor dateComponents: DateComponents) -> UICalendarView.Decoration? {
-            // Check if there is an event for the date and return a decoration if there is
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-            for event in parent.events {
-                if let startDate = dateFormatter.date(from: event.startDate),
-                   let endDate = dateFormatter.date(from: event.endDate),
-                   let date = calendarView.calendar.date(from: dateComponents),
-                   startDate <= date && date <= endDate {
-                    return UICalendarView.Decoration.default(color: .systemGreen, size: .large)
-                }
-            }
-            return nil
-        }
-    }
-}
 
 //Preview
 struct MainPage_Previews: PreviewProvider {
     static var previews: some View {
-        MainPageView()
+        let mockEvents: [Event] = [
+            Event(id: "1", title: "Event 1", startDate: "2023-09-15", endDate: "2023-09-16"),
+            Event(id: "2", title: "Event 2", startDate: "2023-09-17", endDate: "2023-09-18"),
+            Event(id: "3", title: "Event 3", startDate: "2023-09-19", endDate: "2023-09-20")
+        ]
+
+        MainPageView(selectedtDateEvents: mockEvents)
             .environmentObject(Profile.from(Constants.MOCK_TOKEN))
     }
 }
