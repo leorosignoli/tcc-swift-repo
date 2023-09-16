@@ -6,3 +6,9 @@ let dateFormatter: DateFormatter = {
     formatter.timeStyle = .short // controls the format of the time
     return formatter
 }()
+
+let backEndpiDateFormatter: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
+    return formatter
+}()

@@ -84,7 +84,9 @@ final class CalendarCoordinator: NSObject, UICalendarSelectionSingleDateDelegate
             else { return }
             self.selectedDate = date
         
-        EventsService.fetchEvents(owner: self.userProfile.email) { events in
+        let day = dateFormatter.string(from: self.selectedDate!)
+        
+        EventsService.fetchEventsFromDay(owner: self.userProfile.email, day: backEndpiDateFormatter.string(from: selectedDate!)) { events in
                 // Handle the events fetched from the API
             self.eventsForDate = events
             }

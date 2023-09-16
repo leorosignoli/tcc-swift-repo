@@ -63,4 +63,36 @@ class EventsService {
                 }
             }.resume()
         }
+    
+    static func fetchEventsFromDay(owner: String, day: String,  completion: @escaping ([Event]) -> Void) {
+        let encodedDay = encodeString(str: day)
+        let encodedOwner = encodeString(str: owner)
+        let url = URL(string: ApplicationSecrets.GET_ALL_EVENTS_FROM_DAY_ENDPOINT.replacing("{OWNER}", with: encodedOwner).replacing("{DATE}", with: encodedDay))!
+            print("Making api call to: \(url)")
+            URLSession.shared.dataTask(with: url) { (data, response, error) in
+                if let error = error {
+                    print("Error: \(error.localizedDescription)")
+                    return
+                }
+                
+                if let data = data {
+                    let decoder = JSONDecoder()
+                    if let events = try? decoder.decode([Event].self, from: data) {
+                        DispatchQueue.main.async {
+                            print("Retrieved events: \(events)")
+                            completion(events)
+                        }
+                    }
+                }
+            }.resume()
+        }
+    
+    private static func encodeString(str: String) -> String{
+        guard let encodedStr = str.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
+            print("Error: Unable to percent-encode owner string")
+            return ""
+        }
+        return encodedStr
+    
+    }
 }
