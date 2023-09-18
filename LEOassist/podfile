@@ -1,0 +1,6 @@
+
+use_frameworks!
+
+target 'LEOassist' do
+   pod 'MSAL'
+end
