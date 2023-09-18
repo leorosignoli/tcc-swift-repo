@@ -1,0 +1,766 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2905D2D22AB4FF360054894E /* IOSService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2905D2D12AB4FF360054894E /* IOSService.swift */; };
+		2905D2D42AB5049A0054894E /* AddEventsModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2905D2D32AB5049A0054894E /* AddEventsModalView.swift */; };
+		2905D2D62AB536930054894E /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2905D2D52AB536930054894E /* CalendarView.swift */; };
+		291565182AAD099800C29F4F /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291565172AAD099800C29F4F /* Buttons.swift */; };
+		291A22D62AA9356E00B6BC51 /* LEOassistApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291A22D52AA9356E00B6BC51 /* LEOassistApp.swift */; };
+		291A22D82AA9356E00B6BC51 /* LoginPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291A22D72AA9356E00B6BC51 /* LoginPageView.swift */; };
+		291A22DA2AA9356F00B6BC51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 291A22D92AA9356F00B6BC51 /* Assets.xcassets */; };
+		291A22DD2AA9356F00B6BC51 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 291A22DC2AA9356F00B6BC51 /* Preview Assets.xcassets */; };
+		291A22E72AA9356F00B6BC51 /* LEOassistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291A22E62AA9356F00B6BC51 /* LEOassistTests.swift */; };
+		291A22F12AA9356F00B6BC51 /* LEOassistUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291A22F02AA9356F00B6BC51 /* LEOassistUITests.swift */; };
+		291A22F32AA9356F00B6BC51 /* LEOassistUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291A22F22AA9356F00B6BC51 /* LEOassistUITestsLaunchTests.swift */; };
+		2933A3C02AA942F70015AA89 /* MainPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2933A3BF2AA942F70015AA89 /* MainPageView.swift */; };
+		2933A3C42AA94B140015AA89 /* SideBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2933A3C32AA94B140015AA89 /* SideBarView.swift */; };
+		2937265A2AACB74500D877AF /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293726592AACB74500D877AF /* Event.swift */; };
+		293A25F02AA97829003228B4 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A25EF2AA97829003228B4 /* Profile.swift */; };
+		293A25F32AA97942003228B4 /* Auth0 in Frameworks */ = {isa = PBXBuildFile; productRef = 293A25F22AA97942003228B4 /* Auth0 */; };
+		293A25F62AA979FB003228B4 /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = 293A25F52AA979FB003228B4 /* Auth0.plist */; };
+		293A25F82AA984FF003228B4 /* MyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A25F72AA984FF003228B4 /* MyProfileView.swift */; };
+		293A25FB2AA985F5003228B4 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 293A25FA2AA985F5003228B4 /* SDWebImageSwiftUI */; };
+		293A25FF2AA98F4B003228B4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A25FE2AA98F4B003228B4 /* Constants.swift */; };
+		296E82502AAE491E005F7AE4 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296E824F2AAE491E005F7AE4 /* DateUtils.swift */; };
+		296E82522AAE51AD005F7AE4 /* NewEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296E82512AAE51AD005F7AE4 /* NewEventView.swift */; };
+		2972B2E92AAF9F3900E1AEB8 /* SPLASH-SCREEN.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2972B2E82AAF9F3900E1AEB8 /* SPLASH-SCREEN.mp4 */; };
+		2972B2EB2AAFA4D800E1AEB8 /* Backgrounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2972B2EA2AAFA4D800E1AEB8 /* Backgrounds.swift */; };
+		29BFD4702AB3F91C004C39BB /* SaveAllEventsRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BFD46F2AB3F91C004C39BB /* SaveAllEventsRequestBody.swift */; };
+		29BFD4742AB407ED004C39BB /* EventsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BFD4732AB407ED004C39BB /* EventsService.swift */; };
+		29BFD4762AB41707004C39BB /* ApplicationSecrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BFD4752AB41707004C39BB /* ApplicationSecrets.swift */; };
+		29C8D5C32AABB34C00C2D2D1 /* GreekLetterAnimatedText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C8D5C22AABB34C00C2D2D1 /* GreekLetterAnimatedText.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		291A22E32AA9356F00B6BC51 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 291A22CA2AA9356E00B6BC51 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 291A22D12AA9356E00B6BC51;
+			remoteInfo = LEOassist;
+		};
+		291A22ED2AA9356F00B6BC51 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 291A22CA2AA9356E00B6BC51 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 291A22D12AA9356E00B6BC51;
+			remoteInfo = LEOassist;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2905D2D12AB4FF360054894E /* IOSService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSService.swift; sourceTree = "<group>"; };
+		2905D2D32AB5049A0054894E /* AddEventsModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventsModalView.swift; sourceTree = "<group>"; };
+		2905D2D52AB536930054894E /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		291565172AAD099800C29F4F /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
+		291A22D22AA9356E00B6BC51 /* LEOassist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LEOassist.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		291A22D52AA9356E00B6BC51 /* LEOassistApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEOassistApp.swift; sourceTree = "<group>"; };
+		291A22D72AA9356E00B6BC51 /* LoginPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageView.swift; sourceTree = "<group>"; };
+		291A22D92AA9356F00B6BC51 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		291A22DC2AA9356F00B6BC51 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		291A22E22AA9356F00B6BC51 /* LEOassistTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LEOassistTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		291A22E62AA9356F00B6BC51 /* LEOassistTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEOassistTests.swift; sourceTree = "<group>"; };
+		291A22EC2AA9356F00B6BC51 /* LEOassistUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LEOassistUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		291A22F02AA9356F00B6BC51 /* LEOassistUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEOassistUITests.swift; sourceTree = "<group>"; };
+		291A22F22AA9356F00B6BC51 /* LEOassistUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEOassistUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2933A3BF2AA942F70015AA89 /* MainPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageView.swift; sourceTree = "<group>"; };
+		2933A3C32AA94B140015AA89 /* SideBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarView.swift; sourceTree = "<group>"; };
+		293726592AACB74500D877AF /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		293A25EF2AA97829003228B4 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		293A25F52AA979FB003228B4 /* Auth0.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
+		293A25F72AA984FF003228B4 /* MyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileView.swift; sourceTree = "<group>"; };
+		293A25FE2AA98F4B003228B4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		296E824F2AAE491E005F7AE4 /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
+		296E82512AAE51AD005F7AE4 /* NewEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventView.swift; sourceTree = "<group>"; };
+		2972B2E82AAF9F3900E1AEB8 /* SPLASH-SCREEN.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SPLASH-SCREEN.mp4"; sourceTree = "<group>"; };
+		2972B2EA2AAFA4D800E1AEB8 /* Backgrounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Backgrounds.swift; sourceTree = "<group>"; };
+		29BFD46F2AB3F91C004C39BB /* SaveAllEventsRequestBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveAllEventsRequestBody.swift; sourceTree = "<group>"; };
+		29BFD4712AB3FCE2004C39BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		29BFD4732AB407ED004C39BB /* EventsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsService.swift; sourceTree = "<group>"; };
+		29BFD4752AB41707004C39BB /* ApplicationSecrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationSecrets.swift; sourceTree = "<group>"; };
+		29C8D5C22AABB34C00C2D2D1 /* GreekLetterAnimatedText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreekLetterAnimatedText.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		291A22CF2AA9356E00B6BC51 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				293A25FB2AA985F5003228B4 /* SDWebImageSwiftUI in Frameworks */,
+				293A25F32AA97942003228B4 /* Auth0 in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		291A22DF2AA9356F00B6BC51 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		291A22E92AA9356F00B6BC51 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		291565162AAD098000C29F4F /* components */ = {
+			isa = PBXGroup;
+			children = (
+				291565172AAD099800C29F4F /* Buttons.swift */,
+				2972B2EA2AAFA4D800E1AEB8 /* Backgrounds.swift */,
+			);
+			path = components;
+			sourceTree = "<group>";
+		};
+		291A22C92AA9356E00B6BC51 = {
+			isa = PBXGroup;
+			children = (
+				291A22D42AA9356E00B6BC51 /* LEOassist */,
+				291A22E52AA9356F00B6BC51 /* LEOassistTests */,
+				291A22EF2AA9356F00B6BC51 /* LEOassistUITests */,
+				291A22D32AA9356E00B6BC51 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		291A22D32AA9356E00B6BC51 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				291A22D22AA9356E00B6BC51 /* LEOassist.app */,
+				291A22E22AA9356F00B6BC51 /* LEOassistTests.xctest */,
+				291A22EC2AA9356F00B6BC51 /* LEOassistUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		291A22D42AA9356E00B6BC51 /* LEOassist */ = {
+			isa = PBXGroup;
+			children = (
+				29BFD4722AB407CF004C39BB /* services */,
+				29BFD4712AB3FCE2004C39BB /* Info.plist */,
+				296E824E2AAE48FC005F7AE4 /* utils */,
+				291565162AAD098000C29F4F /* components */,
+				29C8D5C12AABB32400C2D2D1 /* animations */,
+				293A26002AA9914D003228B4 /* views */,
+				293A25F42AA979E0003228B4 /* resources */,
+				293A25EE2AA9780F003228B4 /* models */,
+				291A22D52AA9356E00B6BC51 /* LEOassistApp.swift */,
+				291A22D92AA9356F00B6BC51 /* Assets.xcassets */,
+				291A22DB2AA9356F00B6BC51 /* Preview Content */,
+			);
+			path = LEOassist;
+			sourceTree = "<group>";
+		};
+		291A22DB2AA9356F00B6BC51 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				291A22DC2AA9356F00B6BC51 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		291A22E52AA9356F00B6BC51 /* LEOassistTests */ = {
+			isa = PBXGroup;
+			children = (
+				291A22E62AA9356F00B6BC51 /* LEOassistTests.swift */,
+			);
+			path = LEOassistTests;
+			sourceTree = "<group>";
+		};
+		291A22EF2AA9356F00B6BC51 /* LEOassistUITests */ = {
+			isa = PBXGroup;
+			children = (
+				291A22F02AA9356F00B6BC51 /* LEOassistUITests.swift */,
+				291A22F22AA9356F00B6BC51 /* LEOassistUITestsLaunchTests.swift */,
+			);
+			path = LEOassistUITests;
+			sourceTree = "<group>";
+		};
+		293A25EE2AA9780F003228B4 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				293A25EF2AA97829003228B4 /* Profile.swift */,
+				293726592AACB74500D877AF /* Event.swift */,
+				29BFD46F2AB3F91C004C39BB /* SaveAllEventsRequestBody.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		293A25F42AA979E0003228B4 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				2972B2E82AAF9F3900E1AEB8 /* SPLASH-SCREEN.mp4 */,
+				293A25F52AA979FB003228B4 /* Auth0.plist */,
+				293A25FE2AA98F4B003228B4 /* Constants.swift */,
+				29BFD4752AB41707004C39BB /* ApplicationSecrets.swift */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		293A26002AA9914D003228B4 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				291A22D72AA9356E00B6BC51 /* LoginPageView.swift */,
+				2933A3BF2AA942F70015AA89 /* MainPageView.swift */,
+				2933A3C32AA94B140015AA89 /* SideBarView.swift */,
+				293A25F72AA984FF003228B4 /* MyProfileView.swift */,
+				296E82512AAE51AD005F7AE4 /* NewEventView.swift */,
+				2905D2D32AB5049A0054894E /* AddEventsModalView.swift */,
+				2905D2D52AB536930054894E /* CalendarView.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		296E824E2AAE48FC005F7AE4 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				296E824F2AAE491E005F7AE4 /* DateUtils.swift */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		29BFD4722AB407CF004C39BB /* services */ = {
+			isa = PBXGroup;
+			children = (
+				29BFD4732AB407ED004C39BB /* EventsService.swift */,
+				2905D2D12AB4FF360054894E /* IOSService.swift */,
+			);
+			path = services;
+			sourceTree = "<group>";
+		};
+		29C8D5C12AABB32400C2D2D1 /* animations */ = {
+			isa = PBXGroup;
+			children = (
+				29C8D5C22AABB34C00C2D2D1 /* GreekLetterAnimatedText.swift */,
+			);
+			path = animations;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		291A22D12AA9356E00B6BC51 /* LEOassist */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 291A22F62AA9356F00B6BC51 /* Build configuration list for PBXNativeTarget "LEOassist" */;
+			buildPhases = (
+				291A22CE2AA9356E00B6BC51 /* Sources */,
+				291A22CF2AA9356E00B6BC51 /* Frameworks */,
+				291A22D02AA9356E00B6BC51 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LEOassist;
+			packageProductDependencies = (
+				293A25F22AA97942003228B4 /* Auth0 */,
+				293A25FA2AA985F5003228B4 /* SDWebImageSwiftUI */,
+			);
+			productName = LEOassist;
+			productReference = 291A22D22AA9356E00B6BC51 /* LEOassist.app */;
+			productType = "com.apple.product-type.application";
+		};
+		291A22E12AA9356F00B6BC51 /* LEOassistTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 291A22F92AA9356F00B6BC51 /* Build configuration list for PBXNativeTarget "LEOassistTests" */;
+			buildPhases = (
+				291A22DE2AA9356F00B6BC51 /* Sources */,
+				291A22DF2AA9356F00B6BC51 /* Frameworks */,
+				291A22E02AA9356F00B6BC51 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				291A22E42AA9356F00B6BC51 /* PBXTargetDependency */,
+			);
+			name = LEOassistTests;
+			productName = LEOassistTests;
+			productReference = 291A22E22AA9356F00B6BC51 /* LEOassistTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		291A22EB2AA9356F00B6BC51 /* LEOassistUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 291A22FC2AA9356F00B6BC51 /* Build configuration list for PBXNativeTarget "LEOassistUITests" */;
+			buildPhases = (
+				291A22E82AA9356F00B6BC51 /* Sources */,
+				291A22E92AA9356F00B6BC51 /* Frameworks */,
+				291A22EA2AA9356F00B6BC51 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				291A22EE2AA9356F00B6BC51 /* PBXTargetDependency */,
+			);
+			name = LEOassistUITests;
+			productName = LEOassistUITests;
+			productReference = 291A22EC2AA9356F00B6BC51 /* LEOassistUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		291A22CA2AA9356E00B6BC51 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					291A22D12AA9356E00B6BC51 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					291A22E12AA9356F00B6BC51 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 291A22D12AA9356E00B6BC51;
+					};
+					291A22EB2AA9356F00B6BC51 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 291A22D12AA9356E00B6BC51;
+					};
+				};
+			};
+			buildConfigurationList = 291A22CD2AA9356E00B6BC51 /* Build configuration list for PBXProject "LEOassist" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 291A22C92AA9356E00B6BC51;
+			packageReferences = (
+				293A25F12AA97942003228B4 /* XCRemoteSwiftPackageReference "Auth0" */,
+				293A25F92AA985F5003228B4 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
+			productRefGroup = 291A22D32AA9356E00B6BC51 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				291A22D12AA9356E00B6BC51 /* LEOassist */,
+				291A22E12AA9356F00B6BC51 /* LEOassistTests */,
+				291A22EB2AA9356F00B6BC51 /* LEOassistUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		291A22D02AA9356E00B6BC51 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2972B2E92AAF9F3900E1AEB8 /* SPLASH-SCREEN.mp4 in Resources */,
+				291A22DD2AA9356F00B6BC51 /* Preview Assets.xcassets in Resources */,
+				293A25F62AA979FB003228B4 /* Auth0.plist in Resources */,
+				291A22DA2AA9356F00B6BC51 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		291A22E02AA9356F00B6BC51 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		291A22EA2AA9356F00B6BC51 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		291A22CE2AA9356E00B6BC51 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29BFD4762AB41707004C39BB /* ApplicationSecrets.swift in Sources */,
+				2905D2D42AB5049A0054894E /* AddEventsModalView.swift in Sources */,
+				296E82502AAE491E005F7AE4 /* DateUtils.swift in Sources */,
+				2972B2EB2AAFA4D800E1AEB8 /* Backgrounds.swift in Sources */,
+				291A22D82AA9356E00B6BC51 /* LoginPageView.swift in Sources */,
+				2937265A2AACB74500D877AF /* Event.swift in Sources */,
+				293A25F02AA97829003228B4 /* Profile.swift in Sources */,
+				2905D2D22AB4FF360054894E /* IOSService.swift in Sources */,
+				296E82522AAE51AD005F7AE4 /* NewEventView.swift in Sources */,
+				2933A3C42AA94B140015AA89 /* SideBarView.swift in Sources */,
+				291A22D62AA9356E00B6BC51 /* LEOassistApp.swift in Sources */,
+				291565182AAD099800C29F4F /* Buttons.swift in Sources */,
+				2905D2D62AB536930054894E /* CalendarView.swift in Sources */,
+				29BFD4702AB3F91C004C39BB /* SaveAllEventsRequestBody.swift in Sources */,
+				29BFD4742AB407ED004C39BB /* EventsService.swift in Sources */,
+				293A25F82AA984FF003228B4 /* MyProfileView.swift in Sources */,
+				29C8D5C32AABB34C00C2D2D1 /* GreekLetterAnimatedText.swift in Sources */,
+				2933A3C02AA942F70015AA89 /* MainPageView.swift in Sources */,
+				293A25FF2AA98F4B003228B4 /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		291A22DE2AA9356F00B6BC51 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				291A22E72AA9356F00B6BC51 /* LEOassistTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		291A22E82AA9356F00B6BC51 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				291A22F32AA9356F00B6BC51 /* LEOassistUITestsLaunchTests.swift in Sources */,
+				291A22F12AA9356F00B6BC51 /* LEOassistUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		291A22E42AA9356F00B6BC51 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 291A22D12AA9356E00B6BC51 /* LEOassist */;
+			targetProxy = 291A22E32AA9356F00B6BC51 /* PBXContainerItemProxy */;
+		};
+		291A22EE2AA9356F00B6BC51 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 291A22D12AA9356E00B6BC51 /* LEOassist */;
+			targetProxy = 291A22ED2AA9356F00B6BC51 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		291A22F42AA9356F00B6BC51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		291A22F52AA9356F00B6BC51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		291A22F72AA9356F00B6BC51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"LEOassist/Preview Content\"";
+				DEVELOPMENT_TEAM = DLGF89B725;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LEOassist/Info.plist;
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "Esse aplicativo precisa da sua permissão para gerenciar seu calendário.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.uniceub.LEOassist;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		291A22F82AA9356F00B6BC51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"LEOassist/Preview Content\"";
+				DEVELOPMENT_TEAM = DLGF89B725;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LEOassist/Info.plist;
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "Esse aplicativo precisa da sua permissão para gerenciar seu calendário.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.uniceub.LEOassist;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		291A22FA2AA9356F00B6BC51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.uniceub.LEOassistTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LEOassist.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/LEOassist";
+			};
+			name = Debug;
+		};
+		291A22FB2AA9356F00B6BC51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.uniceub.LEOassistTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LEOassist.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/LEOassist";
+			};
+			name = Release;
+		};
+		291A22FD2AA9356F00B6BC51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.uniceub.LEOassistUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LEOassist;
+			};
+			name = Debug;
+		};
+		291A22FE2AA9356F00B6BC51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.uniceub.LEOassistUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LEOassist;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		291A22CD2AA9356E00B6BC51 /* Build configuration list for PBXProject "LEOassist" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				291A22F42AA9356F00B6BC51 /* Debug */,
+				291A22F52AA9356F00B6BC51 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		291A22F62AA9356F00B6BC51 /* Build configuration list for PBXNativeTarget "LEOassist" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				291A22F72AA9356F00B6BC51 /* Debug */,
+				291A22F82AA9356F00B6BC51 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		291A22F92AA9356F00B6BC51 /* Build configuration list for PBXNativeTarget "LEOassistTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				291A22FA2AA9356F00B6BC51 /* Debug */,
+				291A22FB2AA9356F00B6BC51 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		291A22FC2AA9356F00B6BC51 /* Build configuration list for PBXNativeTarget "LEOassistUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				291A22FD2AA9356F00B6BC51 /* Debug */,
+				291A22FE2AA9356F00B6BC51 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		293A25F12AA97942003228B4 /* XCRemoteSwiftPackageReference "Auth0" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/auth0/Auth0.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+		293A25F92AA985F5003228B4 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		293A25F22AA97942003228B4 /* Auth0 */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 293A25F12AA97942003228B4 /* XCRemoteSwiftPackageReference "Auth0" */;
+			productName = Auth0;
+		};
+		293A25FA2AA985F5003228B4 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 293A25F92AA985F5003228B4 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 291A22CA2AA9356E00B6BC51 /* Project object */;
+}

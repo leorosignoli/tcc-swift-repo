@@ -1,5 +1,0 @@
-use_frameworks!
-
-target 'CALENDAR-MAN' do
-   pod 'MSAL'
-end
