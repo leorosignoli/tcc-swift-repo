@@ -40,6 +40,7 @@ struct CalendarView: UIViewRepresentable{
         view.layer.cornerRadius = 15
         view.backgroundColor = .secondarySystemBackground
         view.selectionBehavior = UICalendarSelectionSingleDate(delegate: context.coordinator)
+        view.wantsDateDecorations = true
         return view
     }
     
@@ -83,11 +84,8 @@ final class CalendarCoordinator: NSObject, UICalendarSelectionSingleDateDelegate
               let date = calendar.date(from: dateComponents)
             else { return }
             self.selectedDate = date
-        
-        let day = dateFormatter.string(from: self.selectedDate!)
-        
+                
         EventsService.fetchEventsFromDay(owner: self.userProfile.email, day: backEndpiDateFormatter.string(from: selectedDate!)) { events in
-                // Handle the events fetched from the API
             self.eventsForDate = events
             }
     }

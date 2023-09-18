@@ -36,12 +36,11 @@ struct MainPageView: View {
                 Divider()
                     .frame(height: 1)
                 CalendarView(selectedDate : $selectedDate, selectedDateEvents: $selectedtDateEvents)
-                    .scaledToFit()
-                
+
                
                     if !selectedtDateEvents.isEmpty{
                         List(selectedtDateEvents, id: \.id) { event in
-                            VStack(alignment: .leading, spacing: 10) {
+                            VStack(alignment: .leading, spacing: 5) {
                                 Text(event.title)
                                     .font(.headline)
                                 Text("Início: \(event.startDate)")
@@ -50,18 +49,21 @@ struct MainPageView: View {
                                 Text("Fim: \(event.startDate)")
                                     .font(.subheadline)
                                     .foregroundColor(.secondary)
-                                Divider()
                             }
-                            .padding([.top, .bottom], 10)
+                            .padding([.top, .bottom], 5)
                             
                         }
-                        .padding([.leading, .trailing], 15)
                         .foregroundColor(.primary)
+                        .frame(height: 250)
+                        .frame(width: 470)
 
-                        .cornerRadius( 20)
                         
                     } else {
                         Text("Sem eventos na data selecionada.")
+                            .foregroundColor(.secondary)
+                                .frame(height: 200)
+                                .background(Color(.systemBackground))
+                                .border(Color.secondary, width: 300)
                             
                     }
                 
@@ -104,7 +106,7 @@ class Events: ObservableObject {
 struct MainPage_Previews: PreviewProvider {
     static var previews: some View {
         let mockEvents: [Event] = [
-            Event(id: "1", title: "Event 1", startDate: "2023-09-15", endDate: "2023-09-16"),
+            Event(id: "1", title: "Apresentação do TCC (evento 1)", startDate: "2023-09-15", endDate: "2023-09-16"),
             Event(id: "2", title: "Event 2", startDate: "2023-09-17", endDate: "2023-09-18"),
             Event(id: "3", title: "Event 3", startDate: "2023-09-19", endDate: "2023-09-20")
         ]
