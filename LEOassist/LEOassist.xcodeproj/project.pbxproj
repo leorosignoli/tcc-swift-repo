@@ -27,6 +27,7 @@
 		293A25F82AA984FF003228B4 /* MyProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A25F72AA984FF003228B4 /* MyProfileView.swift */; };
 		293A25FB2AA985F5003228B4 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 293A25FA2AA985F5003228B4 /* SDWebImageSwiftUI */; };
 		293A25FF2AA98F4B003228B4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293A25FE2AA98F4B003228B4 /* Constants.swift */; };
+		295248122AB7D92000A40768 /* MicrosoftService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295248112AB7D92000A40768 /* MicrosoftService.swift */; };
 		296E82502AAE491E005F7AE4 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296E824F2AAE491E005F7AE4 /* DateUtils.swift */; };
 		296E82522AAE51AD005F7AE4 /* NewEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296E82512AAE51AD005F7AE4 /* NewEventView.swift */; };
 		2972B2E92AAF9F3900E1AEB8 /* SPLASH-SCREEN.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2972B2E82AAF9F3900E1AEB8 /* SPLASH-SCREEN.mp4 */; };
@@ -78,6 +79,8 @@
 		293A25F52AA979FB003228B4 /* Auth0.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
 		293A25F72AA984FF003228B4 /* MyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileView.swift; sourceTree = "<group>"; };
 		293A25FE2AA98F4B003228B4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		295248112AB7D92000A40768 /* MicrosoftService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicrosoftService.swift; sourceTree = "<group>"; };
+		295248132AB7DB0A00A40768 /* LEOassist.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LEOassist.entitlements; sourceTree = "<group>"; };
 		296E824F2AAE491E005F7AE4 /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		296E82512AAE51AD005F7AE4 /* NewEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventView.swift; sourceTree = "<group>"; };
 		2972B2E82AAF9F3900E1AEB8 /* SPLASH-SCREEN.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SPLASH-SCREEN.mp4"; sourceTree = "<group>"; };
@@ -153,6 +156,7 @@
 		291A22D42AA9356E00B6BC51 /* LEOassist */ = {
 			isa = PBXGroup;
 			children = (
+				295248132AB7DB0A00A40768 /* LEOassist.entitlements */,
 				29BFD4722AB407CF004C39BB /* services */,
 				29BFD4712AB3FCE2004C39BB /* Info.plist */,
 				296E824E2AAE48FC005F7AE4 /* utils */,
@@ -241,6 +245,7 @@
 			children = (
 				29BFD4732AB407ED004C39BB /* EventsService.swift */,
 				2905D2D12AB4FF360054894E /* IOSService.swift */,
+				295248112AB7D92000A40768 /* MicrosoftService.swift */,
 			);
 			path = services;
 			sourceTree = "<group>";
@@ -259,7 +264,6 @@
 				046FB80E72E5DA6D7D723C22 /* Pods-LEOassist.debug.xcconfig */,
 				89D7EEBD0120D66CF4152112 /* Pods-LEOassist.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -366,7 +370,7 @@
 			);
 			mainGroup = 291A22C92AA9356E00B6BC51;
 			packageReferences = (
-				293A25F12AA97942003228B4 /* XCRemoteSwiftPackageReference "Auth0.swift" */,
+				293A25F12AA97942003228B4 /* XCRemoteSwiftPackageReference "Auth0" */,
 				293A25F92AA985F5003228B4 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = 291A22D32AA9356E00B6BC51 /* Products */;
@@ -467,6 +471,7 @@
 				2933A3C42AA94B140015AA89 /* SideBarView.swift in Sources */,
 				291A22D62AA9356E00B6BC51 /* LEOassistApp.swift in Sources */,
 				291565182AAD099800C29F4F /* Buttons.swift in Sources */,
+				295248122AB7D92000A40768 /* MicrosoftService.swift in Sources */,
 				2905D2D62AB536930054894E /* CalendarView.swift in Sources */,
 				29BFD4702AB3F91C004C39BB /* SaveAllEventsRequestBody.swift in Sources */,
 				29BFD4742AB407ED004C39BB /* EventsService.swift in Sources */,
@@ -630,6 +635,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = LEOassist/LEOassist.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LEOassist/Preview Content\"";
@@ -664,6 +670,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = LEOassist/LEOassist.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LEOassist/Preview Content\"";
@@ -806,7 +813,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		293A25F12AA97942003228B4 /* XCRemoteSwiftPackageReference "Auth0.swift" */ = {
+		293A25F12AA97942003228B4 /* XCRemoteSwiftPackageReference "Auth0" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/auth0/Auth0.swift";
 			requirement = {
@@ -827,7 +834,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		293A25F22AA97942003228B4 /* Auth0 */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 293A25F12AA97942003228B4 /* XCRemoteSwiftPackageReference "Auth0.swift" */;
+			package = 293A25F12AA97942003228B4 /* XCRemoteSwiftPackageReference "Auth0" */;
 			productName = Auth0;
 		};
 		293A25FA2AA985F5003228B4 /* SDWebImageSwiftUI */ = {

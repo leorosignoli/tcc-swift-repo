@@ -12,6 +12,8 @@ struct MainPageView: View {
     let eventStore = EKEventStore()
 
     let iosService = IOSService()
+    
+    let microsoftService = MicrosoftViewController()
 
     var body: some View {
         NavigationViewWithSidebar {
@@ -27,6 +29,7 @@ struct MainPageView: View {
                         }
                     })
                     integratedPlatformsButtonWithSheet(text: "Outlook", icon: Image("OUTLOOK_CALENDAR_ICON"), action: {
+                        microsoftService.initUI()
                         isModalPresented = true
                     })
                     integratedPlatformsButtonWithSheet(text: "Google", icon: Image("GOOGLE_CALENDAR_ICON"), action: {
@@ -55,7 +58,6 @@ struct MainPageView: View {
                         }
                         .foregroundColor(.primary)
                         .frame(height: 250)
-                        .frame(width: 470)
 
                         
                     } else {
@@ -71,7 +73,6 @@ struct MainPageView: View {
                 
                 
                 AddNewEventButton()
-                    .padding(.top, 50)
             }
         }
         .navigationBarBackButtonHidden(true)
