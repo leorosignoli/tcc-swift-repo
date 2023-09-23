@@ -8,14 +8,13 @@ struct MainPageView: View {
     @StateObject private var events = Events()
     @EnvironmentObject var userProfile: Profile
     @State  var selectedtDateEvents: [Event] = []
-    @StateObject var microsoftService = MicrosoftViewController()
+    @StateObject var microsoftLoginHandler:   MicrosoftLoginHandler
 
     let eventStore = EKEventStore()
 
     let iosService = IOSService()
     
-    
-    
+ 
     var body: some View {
         NavigationViewWithSidebar {
             VStack {
@@ -30,8 +29,7 @@ struct MainPageView: View {
                         }
                     })
                     integratedPlatformsButtonWithSheet(text: "Outlook", icon: Image("OUTLOOK_CALENDAR_ICON"), action: {
-                        microsoftService.acquireTokenInteractively()
-//                        isModalPresented = true
+                         isModalPresented = true
                     })
                     integratedPlatformsButtonWithSheet(text: "Google", icon: Image("GOOGLE_CALENDAR_ICON"), action: {
                         isModalPresented = true

@@ -93,6 +93,7 @@ extension MicrosoftViewController {
         
         guard let authorityURL = URL(string: kAuthority) else {
             self.updateLogging(text: "Unable to create authority URL")
+            print("Unable to create authority URL")
             return
         }
         
@@ -170,19 +171,19 @@ extension MicrosoftViewController {
         applicationContext.acquireToken(with: parameters) { (result, error) in
             
             if let error = error {
-                
-                self.updateLogging(text: "Could not acquire token: \(error)")
-                return
-            }
-            
-            guard let result = result else {
-                
-                self.updateLogging(text: "Could not acquire token: No result returned")
-                return
-            }
-            
-            self.accessToken = result.accessToken
-            self.updateLogging(text: "Access token is \(self.accessToken)")
+                       
+                       print("Could not acquire token: \(error)")
+                       return
+                   }
+                   
+                   guard let result = result else {
+                       
+                       print("Could not acquire token: No result returned")
+                       return
+                   }
+                   
+                   self.accessToken = result.accessToken
+                   print("Access token is \(self.accessToken)")
             self.updateCurrentAccount(account: result.account)
             self.getContentWithToken()
         }
