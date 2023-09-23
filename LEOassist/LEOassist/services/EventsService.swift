@@ -11,12 +11,13 @@ class EventsService {
 
         // Prepare your data
         let eventData = (events.items?.compactMap { event -> EventData? in
-            guard let startDate = event.startDate, let endDate = event.endDate else { return nil }
+            let startDate = event.startDate
+            let endDate = event.endDate
             return EventData(
-                title: event.title ?? "",
+                title: event.title,
                 startDate: "\(startDate)",
                 endDate: "\(endDate)",
-                integrationId: event.eventIdentifier
+                integrationId: event.id
             )
         }) ?? []
         let eventRequest = EventRequest(eventOwner: userProfile.email, data: eventData)

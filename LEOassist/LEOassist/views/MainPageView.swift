@@ -8,12 +8,12 @@ struct MainPageView: View {
     @StateObject private var events = Events()
     @EnvironmentObject var userProfile: Profile
     @State  var selectedtDateEvents: [Event] = []
-    @StateObject var microsoftLoginHandler:   MicrosoftLoginHandler
 
     let eventStore = EKEventStore()
-
     let iosService = IOSService()
-    
+    let outlookService = OutlookService()
+    let eventMapper = EventMapper()
+
  
     var body: some View {
         NavigationViewWithSidebar {
@@ -23,14 +23,34 @@ struct MainPageView: View {
                     integratedPlatformsButtonWithSheet(text: "iOS", icon: Image(systemName: "calendar"), action: {
                         iosService.getiOSCalendarData { eventStore, events in
                             if let events = events {
-                                self.events.items = events
+                                self.events.items = eventMapper.mapListToEvent(items: events)
                                 self.presentModal()
                             }
                         }
                     })
+                    
                     integratedPlatformsButtonWithSheet(text: "Outlook", icon: Image("OUTLOOK_CALENDAR_ICON"), action: {
-                         isModalPresented = true
+                        MSALAuthentication.signin(completion: { securityToken, isTokenCached, expiresOn in
+                            guard let token = securityToken else {
+                                print("failed to get the security token.")
+                                return
+                            }
+                            
+                            outlookService.fetchEvents(withToken: token) { (events, error) in
+                                guard let events = events, error == nil else {
+                                    print("failed to fetch events")
+                                    return
+                                }
+                                
+                                DispatchQueue.main.async {
+                                    self.events.items = events
+                                    isModalPresented = true
+                                }
+                            }
+                        })
                     })
+
+
                     integratedPlatformsButtonWithSheet(text: "Google", icon: Image("GOOGLE_CALENDAR_ICON"), action: {
                         isModalPresented = true
                     })
@@ -98,7 +118,7 @@ struct MainPageView: View {
 }
 
 class Events: ObservableObject {
-    @Published var items: [EKEvent]?
+    @Published var items: [Event]?
 }
 
 

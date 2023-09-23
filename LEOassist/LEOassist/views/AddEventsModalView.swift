@@ -8,14 +8,14 @@ struct IntegrationEventsModalView: View {
         VStack {
             VStack {
                 if events.items != nil {
-                    List(events.items!, id: \.eventIdentifier) { event in
+                    List(events.items!, id: \.id) { event in
                         VStack(alignment: .leading, spacing: 10) {
-                            Text(event.title ?? "")
+                            Text(event.title)
                                 .font(.headline)
-                            Text("Início: \(dateFormatter.string(from: event.startDate))")
+                            Text("Início: \(event.startDate)")
                                 .font(.subheadline)
                                 .foregroundColor(.secondary)
-                            Text("Fim: \(dateFormatter.string(from: event.startDate))")
+                            Text("Fim: \(event.startDate)")
                                 .font(.subheadline)
                                 .foregroundColor(.secondary)
                             Divider()
