@@ -16,8 +16,10 @@ class OutlookService {
         let formatter = ISO8601DateFormatter()
         let currentDate = formatter.string(from: Date())
 
-        print(currentDate)
-        let url = URL(string: "https://graph.microsoft.com/v1.0/me/events?$filter=start/dateTime ge '\(currentDate)'")!
+        let filterValue = "start/dateTime ge '\(currentDate)'"
+        let encodedFilterValue = filterValue.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+
+        let url = URL(string: "https://graph.microsoft.com/v1.0/me/events?$filter=\(encodedFilterValue)")!
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")

@@ -1,4 +1,5 @@
 import SwiftUI
+import Auth0
 
 struct NavigationViewWithSidebar<Content: View>: View {
     @State private var showMenu = false // to control showing and hiding of the menu
@@ -54,8 +55,8 @@ struct NavigationViewWithSidebar<Content: View>: View {
 
 struct MenuView: View {
     
-    @State private var showLoginPage = true
-    
+    private let auth0Service = Auth0Service()
+    @State private var isAuthenticated: Bool = true
 
     
     var body: some View {
@@ -83,9 +84,14 @@ struct MenuView: View {
             
             
             Button("# Logout") {
-                self.showLoginPage = true
+                auth0Service.logout()
+                isAuthenticated = false
             }
             .foregroundColor(Color.red)
+            
+            NavigationLink(destination: LoginPageView(), isActive: .constant(!isAuthenticated)) {
+                              EmptyView()
+                          }
         }
         .padding()
         .frame(maxWidth: .infinity, alignment: .leading)
