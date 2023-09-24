@@ -7,7 +7,7 @@ class MSALAuthentication {
     // 'Tenant ID' of your Azure AD instance - this value is a GUID
     private static let kTenantId = ApplicationSecrets.MS_KEY_TENANT_ID
     
-    private static let kAuthority = try! MSALB2CAuthority(url: URL(string: "https://login.microsoftonline.com/\(kTenantId)")!)
+    private static let kAuthority = try! MSALB2CAuthority(url: URL(string: "https://login.microsoftonline.com/common")!)
     private static let kConfig = MSALPublicClientApplicationConfig(clientId: kClientId, redirectUri: nil, authority: kAuthority)
 
     // To use token caching, your MSAL client singleton must have a lifecycle that
@@ -30,7 +30,7 @@ class MSALAuthentication {
             }
             guard let account = currentAccount else { return }
 
-            let silentParameters = MSALSilentTokenParameters(scopes: ["user.read"], account: account)
+            let silentParameters = MSALSilentTokenParameters(scopes: ["user.read", "Calendars.Read"], account: account)
             kMSALClient.acquireTokenSilent(with: silentParameters) { (result, error) in
                 guard let authResult = result, error == nil else {
 
@@ -70,7 +70,7 @@ class MSALAuthentication {
             let webviewParameters = MSALWebviewParameters()
             #endif
 
-            let interactiveParameters = MSALInteractiveTokenParameters(scopes: ["user.read"], webviewParameters: webviewParameters)
+            let interactiveParameters = MSALInteractiveTokenParameters(scopes: ["user.read", "Calendars.Read"], webviewParameters: webviewParameters)
             kMSALClient.acquireToken(with: interactiveParameters, completionBlock: { (result, error) in
                 guard let authResult = result, error == nil else {
                     print(error!.localizedDescription)

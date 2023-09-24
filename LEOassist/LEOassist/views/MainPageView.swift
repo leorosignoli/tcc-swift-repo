@@ -35,19 +35,21 @@ struct MainPageView: View {
                                 print("failed to get the security token.")
                                 return
                             }
-                            
+
                             outlookService.fetchEvents(withToken: token) { (events, error) in
                                 guard let events = events, error == nil else {
-                                    print("failed to fetch events")
+                                    print("Failed to fetch events")
                                     return
                                 }
                                 
                                 DispatchQueue.main.async {
                                     self.events.items = events
-                                    isModalPresented = true
                                 }
+
                             }
                         })
+                        self.presentModal()
+
                     })
 
 

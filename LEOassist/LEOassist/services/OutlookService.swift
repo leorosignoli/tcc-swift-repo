@@ -13,7 +13,11 @@ class OutlookService {
     
     
     func fetchEvents(withToken token: String, completion: @escaping ([Event]?, Error?) -> Void) {
-        let url = URL(string: "https://graph.microsoft.com/v1.0/me/events")!
+        let formatter = ISO8601DateFormatter()
+        let currentDate = formatter.string(from: Date())
+
+        print(currentDate)
+        let url = URL(string: "https://graph.microsoft.com/v1.0/me/events?$filter=start/dateTime ge '\(currentDate)'")!
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
