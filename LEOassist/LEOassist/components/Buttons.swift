@@ -24,10 +24,7 @@ struct IntegratedPlatformsButton: View {
             }
             .frame(height: 50)
         }
-        .overlay(
-                   RoundedRectangle(cornerRadius: 15)
-                       .stroke(Color("blackwhite"), lineWidth: 2)
-               )
+        
         .padding([.leading, .trailing], 5)
         .padding(.bottom, 20)
         .padding(.top, 20)

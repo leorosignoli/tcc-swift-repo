@@ -10,6 +10,7 @@
 		2905D2D22AB4FF360054894E /* IOSService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2905D2D12AB4FF360054894E /* IOSService.swift */; };
 		2905D2D42AB5049A0054894E /* AddEventsModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2905D2D32AB5049A0054894E /* AddEventsModalView.swift */; };
 		2905D2D62AB536930054894E /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2905D2D52AB536930054894E /* CalendarView.swift */; };
+		2911C3072AC242A4004DFE29 /* CalendarManChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2911C3062AC242A4004DFE29 /* CalendarManChatView.swift */; };
 		291565182AAD099800C29F4F /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291565172AAD099800C29F4F /* Buttons.swift */; };
 		2916C46C2ABF7C7D00F6F253 /* MSALAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2916C46B2ABF7C7D00F6F253 /* MSALAuthentication.swift */; };
 		2916C46E2ABF81BF00F6F253 /* OutlookService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2916C46D2ABF81BF00F6F253 /* OutlookService.swift */; };
@@ -65,6 +66,7 @@
 		2905D2D12AB4FF360054894E /* IOSService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSService.swift; sourceTree = "<group>"; };
 		2905D2D32AB5049A0054894E /* AddEventsModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventsModalView.swift; sourceTree = "<group>"; };
 		2905D2D52AB536930054894E /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		2911C3062AC242A4004DFE29 /* CalendarManChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarManChatView.swift; sourceTree = "<group>"; };
 		291565172AAD099800C29F4F /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		2916C46B2ABF7C7D00F6F253 /* MSALAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSALAuthentication.swift; sourceTree = "<group>"; };
 		2916C46D2ABF81BF00F6F253 /* OutlookService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlookService.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 				296E82512AAE51AD005F7AE4 /* NewEventView.swift */,
 				2905D2D32AB5049A0054894E /* AddEventsModalView.swift */,
 				2905D2D52AB536930054894E /* CalendarView.swift */,
+				2911C3062AC242A4004DFE29 /* CalendarManChatView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -478,6 +481,7 @@
 				29D312252AB7D6DB0058BEFE /* ApplicationSecrets.swift in Sources */,
 				2972B2EB2AAFA4D800E1AEB8 /* Backgrounds.swift in Sources */,
 				291A22D82AA9356E00B6BC51 /* LoginPageView.swift in Sources */,
+				2911C3072AC242A4004DFE29 /* CalendarManChatView.swift in Sources */,
 				2937265A2AACB74500D877AF /* Event.swift in Sources */,
 				2996E2202AC0E904009A4865 /* Auth0Service.swift in Sources */,
 				293A25F02AA97829003228B4 /* Profile.swift in Sources */,
