@@ -1,4 +1,5 @@
 import SwiftUI
+import Auth0
 
 struct NavigationViewWithSidebar<Content: View>: View {
     @State private var showMenu = false // to control showing and hiding of the menu
@@ -29,8 +30,12 @@ struct NavigationViewWithSidebar<Content: View>: View {
                                     self.showMenu.toggle()
                                 }
                             }){
-                                Image(systemName: "line.horizontal.3")
-                                    .imageScale(.large)
+                                Image(systemName: "line.horizontal.3.circle.fill")
+                                    .resizable()
+                                       .aspectRatio(contentMode: .fit)
+                                       .frame(width: 30 * 1.1, height: 30 * 1.1)
+                                       .padding(.leading, 10)
+                                       .foregroundColor(Color("THEME_BLUE"))
                             }
                         )
                         .frame(width: geometry.size.width, height: geometry.size.height)
@@ -53,17 +58,20 @@ struct NavigationViewWithSidebar<Content: View>: View {
 }
 
 struct MenuView: View {
-    
-    @State private var showLoginPage = true
-    
+    private let auth0Service = Auth0Service()
+    @State private var isAuthenticated: Bool = true
 
-    
     var body: some View {
         VStack(alignment: .leading) {
-
             NavigationLink(destination: MainPageView()) {
-                GreekLetterAnimatedText(text: "Agenda")
-                    .padding(.top, 110)
+                HStack {
+                
+                    GreekLetterAnimatedText(text: "Agenda")
+                    Spacer()
+                    Image(systemName: "calendar")
+                        .foregroundColor(Color("THEME_BLUE"))
+                }
+                .padding(.top, 110)
             }
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading: EmptyView())
@@ -71,28 +79,65 @@ struct MenuView: View {
             Divider()
             
             NavigationLink(destination: MyProfileView()) {
-                GreekLetterAnimatedText(text: "Meu Perfil")
-                
+                HStack {
+                    
+                    GreekLetterAnimatedText(text: "Perfil")
+                    Spacer()
+
+                    Image(systemName: "person.fill")
+                        .foregroundColor(Color("THEME_YELLOW"))
+                }
             }
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading: EmptyView())
+            
+            Divider()
+            
+            NavigationLink(destination: ChatView()) {
+                HStack {
+  
+                    GreekLetterAnimatedText(text: "Manager")
+                    Spacer()
+                    Image(systemName: "brain.head.profile")
+                        .foregroundColor(Color("THEME_RED"))
+                        .scaleEffect(x: -1, y: 1)
+
+                    Image(systemName: "text.bubble")
+                        .foregroundColor(Color("THEME_RED"))
+                }
+            }
+            .navigationBarBackButtonHidden(true)
+            .navigationBarItems(leading: EmptyView())
+            
             Divider()
             
             Spacer()
+            
             Divider()
             
             
-            Button("# Logout") {
-                self.showLoginPage = true
+            HStack{
+                Image(systemName: "rectangle.portrait.and.arrow.forward")
+                    .foregroundColor(Color("THEME_RED"))
+                
+                Button("# Fazer Logout") {
+                    auth0Service.logout()
+                    isAuthenticated = false
+                }
+                .foregroundColor(Color("THEME_RED"))
+                NavigationLink(destination: LoginPageView(), isActive: .constant(!isAuthenticated)) {
+                      EmptyView()
+                }
+                
             }
-            .foregroundColor(Color.red)
-        }
-        .padding()
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .edgesIgnoringSafeArea(.top)
-        .SideBarBackground()
+            
+            
+       }
+       .padding()
+       .frame(maxWidth: .infinity, alignment: .leading)
+       .edgesIgnoringSafeArea(.top)
+       .SideBarBackground()
     }
-    
 }
 
 struct SidebarView_preview: PreviewProvider {

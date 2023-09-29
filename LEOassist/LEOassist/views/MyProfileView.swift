@@ -5,6 +5,7 @@ import Auth0
 
 struct MyProfileView: View {
     @EnvironmentObject var userProfile: Profile
+    let outlookService = OutlookService()
 
 
     var body: some View {
@@ -44,15 +45,23 @@ struct MyProfileView: View {
                     }
                 }
                 
+                
+                Spacer()
+     
+                Button("Fazer logout  do outlook"){
+                    MSALAuthentication.signout {
+                        
+                    }
+                }
+            }.padding()
+
+                
             }
             .padding(30)
             
             
             
-            
-            Spacer()
-            
-        }.padding()
+                            
     }
     }
 }

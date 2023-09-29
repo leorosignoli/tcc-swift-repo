@@ -10,7 +10,12 @@
 		2905D2D22AB4FF360054894E /* IOSService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2905D2D12AB4FF360054894E /* IOSService.swift */; };
 		2905D2D42AB5049A0054894E /* AddEventsModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2905D2D32AB5049A0054894E /* AddEventsModalView.swift */; };
 		2905D2D62AB536930054894E /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2905D2D52AB536930054894E /* CalendarView.swift */; };
+		2911C3072AC242A4004DFE29 /* CalendarManChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2911C3062AC242A4004DFE29 /* CalendarManChatView.swift */; };
 		291565182AAD099800C29F4F /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291565172AAD099800C29F4F /* Buttons.swift */; };
+		2916C46C2ABF7C7D00F6F253 /* MSALAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2916C46B2ABF7C7D00F6F253 /* MSALAuthentication.swift */; };
+		2916C46E2ABF81BF00F6F253 /* OutlookService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2916C46D2ABF81BF00F6F253 /* OutlookService.swift */; };
+		2916C4702ABF89D300F6F253 /* EventMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2916C46F2ABF89D300F6F253 /* EventMapper.swift */; };
+		2916C4722ABF8E9A00F6F253 /* MicrosoftEventsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2916C4712ABF8E9A00F6F253 /* MicrosoftEventsResponse.swift */; };
 		291A22D62AA9356E00B6BC51 /* LEOassistApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291A22D52AA9356E00B6BC51 /* LEOassistApp.swift */; };
 		291A22D82AA9356E00B6BC51 /* LoginPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 291A22D72AA9356E00B6BC51 /* LoginPageView.swift */; };
 		291A22DA2AA9356F00B6BC51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 291A22D92AA9356F00B6BC51 /* Assets.xcassets */; };
@@ -31,6 +36,7 @@
 		296E82522AAE51AD005F7AE4 /* NewEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296E82512AAE51AD005F7AE4 /* NewEventView.swift */; };
 		2972B2E92AAF9F3900E1AEB8 /* SPLASH-SCREEN.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2972B2E82AAF9F3900E1AEB8 /* SPLASH-SCREEN.mp4 */; };
 		2972B2EB2AAFA4D800E1AEB8 /* Backgrounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2972B2EA2AAFA4D800E1AEB8 /* Backgrounds.swift */; };
+		2996E2202AC0E904009A4865 /* Auth0Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2996E21F2AC0E904009A4865 /* Auth0Service.swift */; };
 		29BFD4702AB3F91C004C39BB /* SaveAllEventsRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BFD46F2AB3F91C004C39BB /* SaveAllEventsRequestBody.swift */; };
 		29BFD4742AB407ED004C39BB /* EventsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BFD4732AB407ED004C39BB /* EventsService.swift */; };
 		29C8D5C32AABB34C00C2D2D1 /* GreekLetterAnimatedText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C8D5C22AABB34C00C2D2D1 /* GreekLetterAnimatedText.swift */; };
@@ -60,7 +66,12 @@
 		2905D2D12AB4FF360054894E /* IOSService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSService.swift; sourceTree = "<group>"; };
 		2905D2D32AB5049A0054894E /* AddEventsModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventsModalView.swift; sourceTree = "<group>"; };
 		2905D2D52AB536930054894E /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		2911C3062AC242A4004DFE29 /* CalendarManChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarManChatView.swift; sourceTree = "<group>"; };
 		291565172AAD099800C29F4F /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
+		2916C46B2ABF7C7D00F6F253 /* MSALAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSALAuthentication.swift; sourceTree = "<group>"; };
+		2916C46D2ABF81BF00F6F253 /* OutlookService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlookService.swift; sourceTree = "<group>"; };
+		2916C46F2ABF89D300F6F253 /* EventMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMapper.swift; sourceTree = "<group>"; };
+		2916C4712ABF8E9A00F6F253 /* MicrosoftEventsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicrosoftEventsResponse.swift; sourceTree = "<group>"; };
 		291A22D22AA9356E00B6BC51 /* LEOassist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LEOassist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		291A22D52AA9356E00B6BC51 /* LEOassistApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LEOassistApp.swift; sourceTree = "<group>"; };
 		291A22D72AA9356E00B6BC51 /* LoginPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageView.swift; sourceTree = "<group>"; };
@@ -78,10 +89,12 @@
 		293A25F52AA979FB003228B4 /* Auth0.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
 		293A25F72AA984FF003228B4 /* MyProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileView.swift; sourceTree = "<group>"; };
 		293A25FE2AA98F4B003228B4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		295248132AB7DB0A00A40768 /* LEOassist.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LEOassist.entitlements; sourceTree = "<group>"; };
 		296E824F2AAE491E005F7AE4 /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		296E82512AAE51AD005F7AE4 /* NewEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventView.swift; sourceTree = "<group>"; };
 		2972B2E82AAF9F3900E1AEB8 /* SPLASH-SCREEN.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SPLASH-SCREEN.mp4"; sourceTree = "<group>"; };
 		2972B2EA2AAFA4D800E1AEB8 /* Backgrounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Backgrounds.swift; sourceTree = "<group>"; };
+		2996E21F2AC0E904009A4865 /* Auth0Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth0Service.swift; sourceTree = "<group>"; };
 		29BFD46F2AB3F91C004C39BB /* SaveAllEventsRequestBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveAllEventsRequestBody.swift; sourceTree = "<group>"; };
 		29BFD4712AB3FCE2004C39BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		29BFD4732AB407ED004C39BB /* EventsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsService.swift; sourceTree = "<group>"; };
@@ -153,6 +166,7 @@
 		291A22D42AA9356E00B6BC51 /* LEOassist */ = {
 			isa = PBXGroup;
 			children = (
+				295248132AB7DB0A00A40768 /* LEOassist.entitlements */,
 				29BFD4722AB407CF004C39BB /* services */,
 				29BFD4712AB3FCE2004C39BB /* Info.plist */,
 				296E824E2AAE48FC005F7AE4 /* utils */,
@@ -199,6 +213,7 @@
 				293A25EF2AA97829003228B4 /* Profile.swift */,
 				293726592AACB74500D877AF /* Event.swift */,
 				29BFD46F2AB3F91C004C39BB /* SaveAllEventsRequestBody.swift */,
+				2916C4712ABF8E9A00F6F253 /* MicrosoftEventsResponse.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -224,6 +239,7 @@
 				296E82512AAE51AD005F7AE4 /* NewEventView.swift */,
 				2905D2D32AB5049A0054894E /* AddEventsModalView.swift */,
 				2905D2D52AB536930054894E /* CalendarView.swift */,
+				2911C3062AC242A4004DFE29 /* CalendarManChatView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -232,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				296E824F2AAE491E005F7AE4 /* DateUtils.swift */,
+				2916C46F2ABF89D300F6F253 /* EventMapper.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -241,6 +258,9 @@
 			children = (
 				29BFD4732AB407ED004C39BB /* EventsService.swift */,
 				2905D2D12AB4FF360054894E /* IOSService.swift */,
+				2916C46B2ABF7C7D00F6F253 /* MSALAuthentication.swift */,
+				2916C46D2ABF81BF00F6F253 /* OutlookService.swift */,
+				2996E21F2AC0E904009A4865 /* Auth0Service.swift */,
 			);
 			path = services;
 			sourceTree = "<group>";
@@ -259,7 +279,6 @@
 				046FB80E72E5DA6D7D723C22 /* Pods-LEOassist.debug.xcconfig */,
 				89D7EEBD0120D66CF4152112 /* Pods-LEOassist.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -366,7 +385,7 @@
 			);
 			mainGroup = 291A22C92AA9356E00B6BC51;
 			packageReferences = (
-				293A25F12AA97942003228B4 /* XCRemoteSwiftPackageReference "Auth0.swift" */,
+				293A25F12AA97942003228B4 /* XCRemoteSwiftPackageReference "Auth0" */,
 				293A25F92AA985F5003228B4 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = 291A22D32AA9356E00B6BC51 /* Products */;
@@ -455,14 +474,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2916C46C2ABF7C7D00F6F253 /* MSALAuthentication.swift in Sources */,
 				2905D2D42AB5049A0054894E /* AddEventsModalView.swift in Sources */,
 				296E82502AAE491E005F7AE4 /* DateUtils.swift in Sources */,
+				2916C4722ABF8E9A00F6F253 /* MicrosoftEventsResponse.swift in Sources */,
 				29D312252AB7D6DB0058BEFE /* ApplicationSecrets.swift in Sources */,
 				2972B2EB2AAFA4D800E1AEB8 /* Backgrounds.swift in Sources */,
 				291A22D82AA9356E00B6BC51 /* LoginPageView.swift in Sources */,
+				2911C3072AC242A4004DFE29 /* CalendarManChatView.swift in Sources */,
 				2937265A2AACB74500D877AF /* Event.swift in Sources */,
+				2996E2202AC0E904009A4865 /* Auth0Service.swift in Sources */,
 				293A25F02AA97829003228B4 /* Profile.swift in Sources */,
 				2905D2D22AB4FF360054894E /* IOSService.swift in Sources */,
+				2916C4702ABF89D300F6F253 /* EventMapper.swift in Sources */,
 				296E82522AAE51AD005F7AE4 /* NewEventView.swift in Sources */,
 				2933A3C42AA94B140015AA89 /* SideBarView.swift in Sources */,
 				291A22D62AA9356E00B6BC51 /* LEOassistApp.swift in Sources */,
@@ -470,6 +494,7 @@
 				2905D2D62AB536930054894E /* CalendarView.swift in Sources */,
 				29BFD4702AB3F91C004C39BB /* SaveAllEventsRequestBody.swift in Sources */,
 				29BFD4742AB407ED004C39BB /* EventsService.swift in Sources */,
+				2916C46E2ABF81BF00F6F253 /* OutlookService.swift in Sources */,
 				293A25F82AA984FF003228B4 /* MyProfileView.swift in Sources */,
 				29C8D5C32AABB34C00C2D2D1 /* GreekLetterAnimatedText.swift in Sources */,
 				2933A3C02AA942F70015AA89 /* MainPageView.swift in Sources */,
@@ -630,6 +655,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = LEOassist/LEOassist.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LEOassist/Preview Content\"";
@@ -664,6 +690,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = LEOassist/LEOassist.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LEOassist/Preview Content\"";
@@ -806,7 +833,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		293A25F12AA97942003228B4 /* XCRemoteSwiftPackageReference "Auth0.swift" */ = {
+		293A25F12AA97942003228B4 /* XCRemoteSwiftPackageReference "Auth0" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/auth0/Auth0.swift";
 			requirement = {
@@ -827,7 +854,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		293A25F22AA97942003228B4 /* Auth0 */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 293A25F12AA97942003228B4 /* XCRemoteSwiftPackageReference "Auth0.swift" */;
+			package = 293A25F12AA97942003228B4 /* XCRemoteSwiftPackageReference "Auth0" */;
 			productName = Auth0;
 		};
 		293A25FA2AA985F5003228B4 /* SDWebImageSwiftUI */ = {

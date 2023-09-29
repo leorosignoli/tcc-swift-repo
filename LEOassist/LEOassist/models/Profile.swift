@@ -52,6 +52,14 @@ class Profile: ObservableObject {
         return Profile(name: name, email: email, emailVerified: emailVerified, picture: picture, updatedAt: updatedAt)
     }
     
+    func clearCredentials(){
+    name = ""
+    email = ""
+    emailVerified = false
+    picture=""
+    updatedAt=""
+    }
+    
     func update(from idToken: String) {
         guard let jwt = try? decode(jwt: idToken) else {
             print("Failed to decode JWT")

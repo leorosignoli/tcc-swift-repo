@@ -94,6 +94,7 @@ extension LoginPageView {
                     print("ID token: \(credentials.idToken)")
                 }
             }
+        
     }
 }
 
