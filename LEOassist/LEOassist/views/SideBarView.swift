@@ -65,10 +65,11 @@ struct MenuView: View {
         VStack(alignment: .leading) {
             NavigationLink(destination: MainPageView()) {
                 HStack {
+                
+                    GreekLetterAnimatedText(text: "Agenda")
+                    Spacer()
                     Image(systemName: "calendar")
                         .foregroundColor(Color("THEME_BLUE"))
-                        
-                    GreekLetterAnimatedText(text: "Agenda")
                 }
                 .padding(.top, 110)
             }
@@ -79,37 +80,58 @@ struct MenuView: View {
             
             NavigationLink(destination: MyProfileView()) {
                 HStack {
+                    
+                    GreekLetterAnimatedText(text: "Perfil")
+                    Spacer()
+
                     Image(systemName: "person.fill")
                         .foregroundColor(Color("THEME_YELLOW"))
-
-                    GreekLetterAnimatedText(text: "Meu Perfil")
                 }
             }
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading: EmptyView())
             
             Divider()
+            
             NavigationLink(destination: ChatView()) {
                 HStack {
+  
+                    GreekLetterAnimatedText(text: "Manager")
+                    Spacer()
                     Image(systemName: "brain.head.profile")
                         .foregroundColor(Color("THEME_RED"))
+                        .scaleEffect(x: -1, y: 1)
 
-                    GreekLetterAnimatedText(text: "Calendar Man")
+                    Image(systemName: "text.bubble")
+                        .foregroundColor(Color("THEME_RED"))
                 }
             }
             .navigationBarBackButtonHidden(true)
             .navigationBarItems(leading: EmptyView())
-            Spacer()
+            
             Divider()
             
-            Button("# Logout") {
-                auth0Service.logout()
-                isAuthenticated = false
+            Spacer()
+            
+            Divider()
+            
+            
+            HStack{
+                Image(systemName: "rectangle.portrait.and.arrow.forward")
+                    .foregroundColor(Color("THEME_RED"))
+                
+                Button("# Fazer Logout") {
+                    auth0Service.logout()
+                    isAuthenticated = false
+                }
+                .foregroundColor(Color("THEME_RED"))
+                NavigationLink(destination: LoginPageView(), isActive: .constant(!isAuthenticated)) {
+                      EmptyView()
+                }
+                
             }
             
-            NavigationLink(destination: LoginPageView(), isActive: .constant(!isAuthenticated)) {
-                  EmptyView()
-            }
+            
        }
        .padding()
        .frame(maxWidth: .infinity, alignment: .leading)

@@ -1,7 +1,7 @@
 
 import SwiftUI
 
-struct Message: Identifiable {
+struct Message: Identifiable, Codable {
     var id = UUID()
     var text: String
     var isUser: Bool
@@ -9,18 +9,20 @@ struct Message: Identifiable {
 struct ChatView: View {
 
     @State private var text = ""
-    @State private var messages: [Message] = [
-        Message(text: "Hello!", isUser: true),
-        Message(text: "How are you?", isUser: false),
-        Message(text: "I'm doing great, thanks! I'm doing great, thanks! I'm doing great, thanks! I'm doing great, thanks! I'm doing great, thanks! I'm doing great, thanks! I'm doing great, thanks!", isUser: true),
-        Message(text: "Glad to hear that!", isUser: false)
-    ]
+    @AppStorage("messages") private var messagesData: Data = Data()
+    @State private var messages: [Message] = []
+
+    init() {
+        if let savedMessages = try? JSONDecoder().decode([Message].self, from: messagesData) {
+            self._messages = State(initialValue: savedMessages)
+        }
+    }
+
 
     var body: some View {
            NavigationViewWithSidebar {
                Divider()
                    .padding(.top)
-                   .padding(.bottom, -8)
                VStack {
                    ScrollView {
                        VStack(spacing: 16) {
@@ -47,23 +49,23 @@ struct ChatView: View {
                    }
                    .padding(.top, 40.0)
                    
-                   .background(
-                    Image("BACKGROUND_TEXTURE")
-                        .resizable()
-                        .scaledToFit())
                 
                    Divider()
-                       .padding(.top, -8)
 
                 HStack {
+                    Image(systemName: "plus.message.fill")
+                        .resizable()
+                           .aspectRatio(contentMode: .fit)
+                           .frame(width: 20 * 1.25)
+                           .padding(.leading, 10)
+                           .foregroundColor(Color("THEME_YELLOW"))
+
                     TextField("Digite Uma mensagem...", text: $text)
                         .padding(.leading)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .buttonBorderShape(.roundedRectangle(radius: 15))
                     Image(systemName: "mic.square.fill")
-
                         .resizable()
-                
                            .aspectRatio(contentMode: .fit)
                            .frame(width: 30 * 1.25)
                            .padding(.leading, 10)
@@ -72,6 +74,7 @@ struct ChatView: View {
                     Button(action: {
                         if (!text.isEmpty){
                             messages.append(Message(text: text, isUser: true))
+                            messagesData = try! JSONEncoder().encode(messages)
                         }
                         text = ""
                     }) {

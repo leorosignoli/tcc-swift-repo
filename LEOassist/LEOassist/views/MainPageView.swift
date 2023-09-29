@@ -95,12 +95,7 @@ struct MainPageView: View {
                 
                 AddNewEventButton()
             }
-            .background(
-                Image("BACKGROUND_TEXTURE")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .edgesIgnoringSafeArea(.all)
-            )
+           
             
         }
        
