@@ -135,6 +135,7 @@
 		291565162AAD098000C29F4F /* components */ = {
 			isa = PBXGroup;
 			children = (
+				29C8D5C12AABB32400C2D2D1 /* animations */,
 				291565172AAD099800C29F4F /* Buttons.swift */,
 				2972B2EA2AAFA4D800E1AEB8 /* Backgrounds.swift */,
 			);
@@ -171,7 +172,6 @@
 				29BFD4712AB3FCE2004C39BB /* Info.plist */,
 				296E824E2AAE48FC005F7AE4 /* utils */,
 				291565162AAD098000C29F4F /* components */,
-				29C8D5C12AABB32400C2D2D1 /* animations */,
 				293A26002AA9914D003228B4 /* views */,
 				293A25F42AA979E0003228B4 /* resources */,
 				293A25EE2AA9780F003228B4 /* models */,
