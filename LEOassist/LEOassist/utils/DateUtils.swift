@@ -12,3 +12,9 @@ let backEndpiDateFormatter: DateFormatter = {
     formatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
     return formatter
 }()
+
+let backEndpiDateWithoutTimeFormatter: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyy-MM-dd"
+    return formatter
+}()

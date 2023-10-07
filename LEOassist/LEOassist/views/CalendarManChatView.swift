@@ -1,80 +1,97 @@
 
 import SwiftUI
 
-struct Message: Identifiable, Codable {
-    var id = UUID()
-    var text: String
-    var isUser: Bool
-}
-struct ChatView: View {
 
+struct ChatView: View {
+    
     @State private var text = ""
     @AppStorage("messages") private var messagesData: Data = Data()
-    @State private var messages: [Message] = []
-
+    @State private var messages: [ChatMessage] = []
+    @State private var isLoading = false
+    @EnvironmentObject var userProfile : Profile
+    
+    
+    
     init() {
-        if let savedMessages = try? JSONDecoder().decode([Message].self, from: messagesData) {
+        if let savedMessages = try? JSONDecoder().decode([ChatMessage].self, from: messagesData) {
             self._messages = State(initialValue: savedMessages)
         }
     }
-
-
+    
+    
     var body: some View {
-           NavigationViewWithSidebar {
-               Divider()
-                   .padding(.top)
-               VStack {
-                   ScrollView {
-                       VStack(spacing: 16) {
-                           ForEach(messages) { message in
-                               HStack {
-                                   if message.isUser {
-                                       Spacer()
-                                       Text(message.text)
-                                           .padding(.all, 12)
-                                           .background(ChatBubble(isUser: true).fill(Color("THEME_BLUE")))
-                                           .foregroundColor(.white)
-                                   } else {
-                                       Text(message.text)
-                                           .foregroundColor(Color.white)
-                                           .padding(.all, 12)
-                                           .background(ChatBubble(isUser: false).fill(Color("THEME_YELLOW")))
-                                       Spacer()
-                                   }
-                               }
-                           }
-                       }.padding(.horizontal)
-                           
-                       
-                   }
-                   .padding(.top, 40.0)
-                   
+        NavigationViewWithSidebar {
+            Divider()
+                .padding(.top)
+            Button("Limpar mensagens"){
+                messages = []
+                messagesData = try! JSONEncoder().encode(messages)
+            }
+            
+            VStack {
+                ScrollView {
+                    VStack(spacing: 16) {
+                        ForEach(messages) { message in
+                            HStack {
+                                if message.role == "user"{
+                                    Spacer()
+                                    Text(message.content!)
+                                        .padding(.all, 12)
+                                        .background(ChatBubble(isUser: true).fill(Color("THEME_BLUE")))
+                                        .foregroundColor(.white)
+                                    
+                                } else if message.role == "assistant" {
+                                    if let content = message.content, !content.isEmpty {
+                                        Text(content)
+                                            .foregroundColor(Color.white)
+                                            .padding(.all, 12)
+                                            .background(ChatBubble(isUser: false).fill(Color("THEME_YELLOW")))
+                                        Spacer()
+                                    }
+                                }
+                            }
+                        }
+                    }.padding(.horizontal)
+                    
+                    
+                }
+                .padding(.top, 40.0)
                 
-                   Divider()
-
+                
+                
+                Divider()
+                
                 HStack {
                     Image(systemName: "plus.message.fill")
                         .resizable()
-                           .aspectRatio(contentMode: .fit)
-                           .frame(width: 20 * 1.25)
-                           .padding(.leading, 10)
-                           .foregroundColor(Color("THEME_YELLOW"))
-
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 20 * 1.25)
+                        .padding(.leading, 10)
+                        .foregroundColor(Color("THEME_YELLOW"))
+                    
                     TextField("Digite Uma mensagem...", text: $text)
                         .padding(.leading)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .buttonBorderShape(.roundedRectangle(radius: 15))
+                        .shadow(radius: 2)
                     Image(systemName: "mic.square.fill")
                         .resizable()
-                           .aspectRatio(contentMode: .fit)
-                           .frame(width: 30 * 1.25)
-                           .padding(.leading, 10)
-                           .foregroundColor(Color("THEME_BLUE"))
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 30 * 1.25)
+                        .padding(.leading, 10)
+                        .foregroundColor(Color("THEME_BLUE"))
                     
                     Button(action: {
                         if (!text.isEmpty){
-                            messages.append(Message(text: text, isUser: true))
+                            isLoading = true
+                            
+                            messages.append(ChatMessage(content: text, role: "user"))
                             messagesData = try! JSONEncoder().encode(messages)
+                            ChatWorkflowService.chatWithBot(conversation: messages, owner: userProfile.email) { (newMessages) in
+                                messages = newMessages
+                                messagesData = try! JSONEncoder().encode(messages)
+                                isLoading = false
+                            }
                         }
                         text = ""
                     }) {
@@ -84,30 +101,33 @@ struct ChatView: View {
                             .frame(height: 30 * 1.25)
                             .background(Color("THEME_RED"))
                             .cornerRadius(8)
-                        
-                            
+                            .disabled(isLoading)
                     }
                 }.padding()
+                
             }
+            .modifier(DismissKeyboardOnTap())
+
         }
     }
     
-    func getMessages() -> [Message]{
+    func getMessages() -> [ChatMessage]{
         return messages
     }
 }
 
-struct ChatBubble: Shape {
-    var isUser: Bool
-
-    func path(in rect: CGRect) -> Path {
-        let path = UIBezierPath(roundedRect: rect, byRoundingCorners: isUser ? [.topLeft, .bottomLeft, .bottomRight] : [.topLeft, .topRight, .bottomRight], cornerRadii: CGSize(width: 10, height: 10))
-        return Path(path.cgPath)
+struct DismissKeyboardOnTap: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .onTapGesture {
+                UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+            }
     }
 }
 
 struct ChatView_Previews: PreviewProvider {
     static var previews: some View {
         ChatView()
+            .environmentObject(Profile.from(Constants.MOCK_TOKEN))
     }
 }
