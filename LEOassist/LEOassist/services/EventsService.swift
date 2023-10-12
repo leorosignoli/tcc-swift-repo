@@ -39,6 +39,40 @@ class EventsService {
         task.resume()
     }
     
+    static func addSingleEvent(userProfile: Profile, event: EventData, completion: @escaping (Result<Void, Error>) -> Void) {
+        let url = URL(string: ApplicationSecrets.SAVE_SINGLE_EVENT_ENDPOINT)!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+       
+        request.setValue("\(userProfile.email)", forHTTPHeaderField: "owner")
+       
+        
+        let jsonData = try? JSONEncoder().encode(event)
+
+        // Attach your data to the request
+        request.httpBody = jsonData
+
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                if let error = error {
+                    print("Error: \(error)")
+                    completion(.failure(error))
+                } else if let httpResponse = response as? HTTPURLResponse {
+                    let str = String(data: data ?? Data(), encoding: .utf8)
+                    print("Received data:\n\(str ?? "")")
+
+                    if httpResponse.statusCode == 201 {
+                        completion(.success(()))
+                    } else {
+                        let error = NSError(domain: "", code: httpResponse.statusCode, userInfo: [NSLocalizedDescriptionKey: "Failed to create event"])
+                        completion(.failure(error))
+                    }
+                }
+            }
+            task.resume()
+    }
+    
+    
     
     static func fetchEvents(owner: String, completion: @escaping ([Event]) -> Void) {
             guard let encodedOwner = owner.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {

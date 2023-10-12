@@ -21,12 +21,13 @@ struct ChatView: View {
     
     var body: some View {
         NavigationViewWithSidebar {
-            Divider()
-                .padding(.top)
-            Button("Limpar mensagens"){
+            
+            Button("Nova conversa"){
                 messages = []
                 messagesData = try! JSONEncoder().encode(messages)
             }
+            Divider()
+                .padding(.top)
             
             VStack {
                 ScrollView {
@@ -62,24 +63,12 @@ struct ChatView: View {
                 Divider()
                 
                 HStack {
-                    Image(systemName: "plus.message.fill")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 20 * 1.25)
-                        .padding(.leading, 10)
-                        .foregroundColor(Color("THEME_YELLOW"))
                     
                     TextField("Digite Uma mensagem...", text: $text)
                         .padding(.leading)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .buttonBorderShape(.roundedRectangle(radius: 15))
                         .shadow(radius: 2)
-                    Image(systemName: "mic.square.fill")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 30 * 1.25)
-                        .padding(.leading, 10)
-                        .foregroundColor(Color("THEME_BLUE"))
                     
                     Button(action: {
                         if (!text.isEmpty){
@@ -104,6 +93,7 @@ struct ChatView: View {
                             .disabled(isLoading)
                     }
                 }.padding()
+                    .background(Color("BACKGROUND-COLORS"))
                 
             }
             .modifier(DismissKeyboardOnTap())
