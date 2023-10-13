@@ -17,6 +17,6 @@ struct CreateEventsClientRequestBody: Encodable {
 struct Event: Codable, Identifiable {
     let id: String
     let title: String
-    let startDate: String
-    let endDate: String 
+    var startDate: String
+    var endDate: String
 }
