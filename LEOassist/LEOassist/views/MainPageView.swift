@@ -8,6 +8,8 @@ struct MainPageView: View {
     @StateObject private var events = Events()
     @EnvironmentObject var userProfile: Profile
     @State  var selectedtDateEvents: [Event] = []
+    @ObservedObject private var googleCalendar = GoogleCalendarManagerService()
+
 
     let eventStore = EKEventStore()
     let iosService = IOSService()
@@ -57,6 +59,7 @@ struct MainPageView: View {
 
 
                     integratedPlatformsButtonWithSheet(text: "Google", icon: Image("GOOGLE_CALENDAR_ICON"), action: {
+                        googleCalendar.fetchEvents()
                         isModalPresented = true
                     })
                 }
