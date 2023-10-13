@@ -311,6 +311,7 @@
 				291A22CF2AA9356E00B6BC51 /* Frameworks */,
 				291A22D02AA9356E00B6BC51 /* Resources */,
 				FE426F5BE0155BEA62EEE6C8 /* [CP] Embed Pods Frameworks */,
+				C99DB712C095433552CF508E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -394,7 +395,7 @@
 			);
 			mainGroup = 291A22C92AA9356E00B6BC51;
 			packageReferences = (
-				293A25F12AA97942003228B4 /* XCRemoteSwiftPackageReference "Auth0" */,
+				293A25F12AA97942003228B4 /* XCRemoteSwiftPackageReference "Auth0.swift" */,
 				293A25F92AA985F5003228B4 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = 291A22D32AA9356E00B6BC51 /* Products */;
@@ -457,6 +458,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C99DB712C095433552CF508E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LEOassist/Pods-LEOassist-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LEOassist/Pods-LEOassist-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LEOassist/Pods-LEOassist-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FE426F5BE0155BEA62EEE6C8 /* [CP] Embed Pods Frameworks */ = {
@@ -845,7 +863,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		293A25F12AA97942003228B4 /* XCRemoteSwiftPackageReference "Auth0" */ = {
+		293A25F12AA97942003228B4 /* XCRemoteSwiftPackageReference "Auth0.swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/auth0/Auth0.swift";
 			requirement = {
@@ -866,7 +884,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		293A25F22AA97942003228B4 /* Auth0 */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 293A25F12AA97942003228B4 /* XCRemoteSwiftPackageReference "Auth0" */;
+			package = 293A25F12AA97942003228B4 /* XCRemoteSwiftPackageReference "Auth0.swift" */;
 			productName = Auth0;
 		};
 		293A25FA2AA985F5003228B4 /* SDWebImageSwiftUI */ = {
