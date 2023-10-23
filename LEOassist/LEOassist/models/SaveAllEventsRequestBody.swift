@@ -20,3 +20,4 @@ struct EventRequest: Codable {
     var eventOwner: String
     var data: [EventData]
 }
+

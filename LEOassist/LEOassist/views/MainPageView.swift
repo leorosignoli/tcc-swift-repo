@@ -8,11 +8,14 @@ struct MainPageView: View {
     @StateObject private var events = Events()
     @EnvironmentObject var userProfile: Profile
     @State  var selectedtDateEvents: [Event] = []
+    @ObservedObject private var googleCalendar = GoogleCalendarManagerService()
+
 
     let eventStore = EKEventStore()
     let iosService = IOSService()
     let outlookService = OutlookService()
     let eventMapper = EventMapper()
+    let dateFormatter = backEndApiDateFormatter
 
  
     var body: some View {
@@ -42,8 +45,10 @@ struct MainPageView: View {
                                     return
                                 }
                                 
+                                let mappedEvents = updateEventsDates(events: events)
+                                
                                 DispatchQueue.main.async {
-                                    self.events.items = events
+                                    self.events.items = mappedEvents
                                 }
 
                             }
@@ -54,6 +59,7 @@ struct MainPageView: View {
 
 
                     integratedPlatformsButtonWithSheet(text: "Google", icon: Image("GOOGLE_CALENDAR_ICON"), action: {
+                        googleCalendar.fetchEvents()
                         isModalPresented = true
                     })
                 }
@@ -67,10 +73,10 @@ struct MainPageView: View {
                             VStack(alignment: .leading, spacing: 5) {
                                 Text(event.title)
                                     .font(.headline)
-                                Text("Início: \(event.startDate)")
+                                Text("Início: \(formatTime(from:event.startDate))")
                                     .font(.subheadline)
                                     .foregroundColor(.secondary)
-                                Text("Fim: \(event.startDate)")
+                                Text("Fim: \(formatTime(from:event.startDate))")
                                     .font(.subheadline)
                                     .foregroundColor(.secondary)
                             }
@@ -119,6 +125,49 @@ struct MainPageView: View {
         .sheet(isPresented: $isModalPresented) {
             IntegrationEventsModalView(isModalPresented: $isModalPresented, events: events)
         }
+    }
+}
+
+
+extension MainPageView {
+    
+    func updateEventsDates(events: [Event]) -> [Event] {
+        return events.map { event in
+            var newEvent = event
+            newEvent.startDate = convertEventDate(eventDate: event.startDate)
+            newEvent.endDate = convertEventDate(eventDate: event.endDate)
+            return newEvent
+        }
+    }
+    
+
+    
+     func convertEventDate(eventDate: String) -> String {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSSS"
+            
+            guard let dateObject = dateFormatter.date(from: eventDate) else {
+                return "Error while converting the date"
+            }
+
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+            let finalDateString = dateFormatter.string(from: dateObject)
+
+            return finalDateString
+        }
+    
+    func formatTime(from dateString: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        
+        guard let dateObject = dateFormatter.date(from: dateString) else {
+            return dateString
+        }
+        
+        dateFormatter.dateFormat = "HH:mm:ss"
+        let timeString = dateFormatter.string(from: dateObject)
+        
+        return timeString
     }
 }
 

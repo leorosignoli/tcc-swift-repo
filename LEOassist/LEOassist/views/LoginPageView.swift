@@ -62,6 +62,9 @@ struct LoginPageView: View {
                     .aspectRatio(contentMode: .fill)
                     .ignoresSafeArea()
             )
+            .onTapGesture {
+                checkIfAuthenticated()
+            }
 
           
         
@@ -71,11 +74,16 @@ struct LoginPageView: View {
         .navigationBarItems(leading: EmptyView())
     
     }
-        
     
-}
-
-extension LoginPageView {
+    func checkIfAuthenticated() {
+        if let _ = UserDefaults.standard.string(forKey: "idToken") {
+            print("User Already authenticated.")
+            self.isAuthenticated = true
+        }
+        else {
+            print("User is not authenticated yet.")
+            self.isAuthenticated = false }
+    }
     
     func login() {
         Auth0
@@ -88,6 +96,7 @@ extension LoginPageView {
                 case .success(let credentials):
                     self.isAuthenticated = true
                     self.userProfile.update(from : credentials.idToken)
+                    UserDefaults.standard.set(credentials.idToken, forKey: "idToken")
                     
                     print("user: \(userProfile)")
                     print("Credentials: \(credentials)")
@@ -103,4 +112,3 @@ struct LoginView_Previews: PreviewProvider {
         LoginPageView()
     }
 }
-

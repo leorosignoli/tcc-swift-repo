@@ -3,4 +3,6 @@ use_frameworks!
 
 target 'LEOassist' do
    pod 'MSAL'
+   pod 'GoogleAPIClientForREST/Calendar'
+   pod 'GoogleSignIn', '~> 5.0'
 end

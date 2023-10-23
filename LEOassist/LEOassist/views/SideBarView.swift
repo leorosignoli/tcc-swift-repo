@@ -67,6 +67,7 @@ struct MenuView: View {
                 HStack {
                 
                     GreekLetterAnimatedText(text: "Agenda")
+                        .font(.title3)
                     Spacer()
                     Image(systemName: "calendar")
                         .foregroundColor(Color("THEME_BLUE"))
@@ -77,11 +78,14 @@ struct MenuView: View {
             .navigationBarItems(leading: EmptyView())
             
             Divider()
+                .padding([.top,.bottom])
             
             NavigationLink(destination: MyProfileView()) {
                 HStack {
                     
                     GreekLetterAnimatedText(text: "Perfil")
+                        .font(.title3)
+
                     Spacer()
 
                     Image(systemName: "person.fill")
@@ -92,11 +96,15 @@ struct MenuView: View {
             .navigationBarItems(leading: EmptyView())
             
             Divider()
+                .padding([.top,.bottom])
+
             
             NavigationLink(destination: ChatView()) {
                 HStack {
   
                     GreekLetterAnimatedText(text: "Manager")
+                        .font(.title3)
+
                     Spacer()
                     Image(systemName: "brain.head.profile")
                         .foregroundColor(Color("THEME_RED"))
@@ -110,6 +118,8 @@ struct MenuView: View {
             .navigationBarItems(leading: EmptyView())
             
             Divider()
+                .padding([.top,.bottom])
+
             
             Spacer()
             

@@ -34,16 +34,22 @@ struct IntegratedPlatformsButton: View {
 struct AddNewEventButton: View{
     private var text = "Adicionar Novo Evento"
     var body: some View {
-        HStack{
-            Image(systemName: "calendar.badge.plus")
-                .resizable() // Make the icon resizable
-                .aspectRatio(contentMode: .fit) // Keep the aspect ratio while fitting the size
-                .frame(height: 30) // Set the height to be the same as the button
-                .padding(.trailing, 10)
-            Button(text) {
-             NewEventView()
+            
+            HStack{
+                
+                NavigationLink(destination: NewEventView()) {
+                    Image(systemName: "calendar.badge.plus")
+                        .resizable() // Make the icon resizable
+                        .aspectRatio(contentMode: .fit) // Keep the aspect ratio while fitting the size
+                        .frame(height: 30) // Set the height to be the same as the button
+                        .padding(.trailing, 10)
+                        .foregroundColor(Color("THEME_YELLOW"))
+                    Text(text)
+                    
+                }
+
             }
-        }
+        
         
     }
 }
@@ -87,9 +93,10 @@ struct AddEventsButton: View{
 struct ButtonsPreview: PreviewProvider {
     static var previews: some View {
         VStack{
-            AddNewEventButton()
             IntegratedPlatformsButton(text: "example", icon: Image("GOOGLE_CALENDAR_ICON"), action:  {})
             AddEventsButton(action:  {}, events: Events() )
+            AddNewEventButton()
+
         }
         
     }

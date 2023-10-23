@@ -85,7 +85,7 @@ final class CalendarCoordinator: NSObject, UICalendarSelectionSingleDateDelegate
             else { return }
             self.selectedDate = date
                 
-        EventsService.fetchEventsFromDay(owner: self.userProfile.email, day: backEndpiDateFormatter.string(from: selectedDate!)) { events in
+        EventsService.fetchEventsFromDay(owner: self.userProfile.email, day: backEndpiDateWithoutTimeFormatter.string(from: selectedDate!)) { events in
             self.eventsForDate = events
             }
     }

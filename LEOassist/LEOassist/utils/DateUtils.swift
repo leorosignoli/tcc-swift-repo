@@ -7,8 +7,14 @@ let dateFormatter: DateFormatter = {
     return formatter
 }()
 
-let backEndpiDateFormatter: DateFormatter = {
+let backEndApiDateFormatter: DateFormatter = {
     let formatter = DateFormatter()
-    formatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
+    formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+    return formatter
+}()
+
+let backEndpiDateWithoutTimeFormatter: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyy-MM-dd"
     return formatter
 }()
