@@ -13,10 +13,13 @@ class GoogleCalendarManagerService: NSObject, ObservableObject, GIDSignInDelegat
         GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance().scopes = [kGTLRAuthScopeCalendar]
         GIDSignIn.sharedInstance().clientID = ApplicationSecrets.GOOGLE_CLIENT_ID
+        calendarService.apiKey = ApplicationSecrets.GOOGLE_API_KEY
     }
     
     func authenticate() {
-        GIDSignIn.sharedInstance().presentingViewController = UIApplication.shared.windows.first?.rootViewController
+        if let windowScene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
+            GIDSignIn.sharedInstance().presentingViewController = windowScene.windows.first?.rootViewController
+        }
         GIDSignIn.sharedInstance().signIn()
     }
     
@@ -26,10 +29,12 @@ class GoogleCalendarManagerService: NSObject, ObservableObject, GIDSignInDelegat
         if let error = error {
             print("Error signing in: \(error.localizedDescription)")
             return
+        } else{
+            
+            // Set the authenticated user's credentials for the calendar service
+            calendarService.authorizer = user.authentication.fetcherAuthorizer()
         }
         
-        // Set the authenticated user's credentials for the calendar service
-        calendarService.authorizer = user.authentication.fetcherAuthorizer()
     }
     
     func fetchEvents() {
@@ -42,13 +47,12 @@ class GoogleCalendarManagerService: NSObject, ObservableObject, GIDSignInDelegat
 
     private func fetchEventsInternal() {
         let query = GTLRCalendarQuery_EventsList.query(withCalendarId: "primary")
-        query.maxResults = 10
+        query.maxResults = 100
         query.timeMin = GTLRDateTime(date: Date())
         query.orderBy = kGTLRCalendarOrderByStartTime
-        
         calendarService.executeQuery(query) { [weak self] (_, result, error) in
             if let error = error {
-                print("Error fetching events: \(error.localizedDescription)")
+                print("Error fetching events: \(error)")
                 return
             }
             
