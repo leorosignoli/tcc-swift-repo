@@ -39,6 +39,7 @@
 		296E82522AAE51AD005F7AE4 /* NewEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296E82512AAE51AD005F7AE4 /* NewEventView.swift */; };
 		2972B2E92AAF9F3900E1AEB8 /* SPLASH-SCREEN.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2972B2E82AAF9F3900E1AEB8 /* SPLASH-SCREEN.mp4 */; };
 		2972B2EB2AAFA4D800E1AEB8 /* Backgrounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2972B2EA2AAFA4D800E1AEB8 /* Backgrounds.swift */; };
+		298FF48D2AF58DFC00DFEC5D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 298FF48C2AF58DFC00DFEC5D /* GoogleService-Info.plist */; };
 		2996E2202AC0E904009A4865 /* Auth0Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2996E21F2AC0E904009A4865 /* Auth0Service.swift */; };
 		29BFD4702AB3F91C004C39BB /* SaveAllEventsRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BFD46F2AB3F91C004C39BB /* SaveAllEventsRequestBody.swift */; };
 		29BFD4742AB407ED004C39BB /* EventsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BFD4732AB407ED004C39BB /* EventsService.swift */; };
@@ -100,6 +101,7 @@
 		296E82512AAE51AD005F7AE4 /* NewEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventView.swift; sourceTree = "<group>"; };
 		2972B2E82AAF9F3900E1AEB8 /* SPLASH-SCREEN.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SPLASH-SCREEN.mp4"; sourceTree = "<group>"; };
 		2972B2EA2AAFA4D800E1AEB8 /* Backgrounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Backgrounds.swift; sourceTree = "<group>"; };
+		298FF48C2AF58DFC00DFEC5D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2996E21F2AC0E904009A4865 /* Auth0Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth0Service.swift; sourceTree = "<group>"; };
 		29BFD46F2AB3F91C004C39BB /* SaveAllEventsRequestBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveAllEventsRequestBody.swift; sourceTree = "<group>"; };
 		29BFD4712AB3FCE2004C39BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				295248132AB7DB0A00A40768 /* LEOassist.entitlements */,
 				29BFD4722AB407CF004C39BB /* services */,
 				29BFD4712AB3FCE2004C39BB /* Info.plist */,
+				298FF48C2AF58DFC00DFEC5D /* GoogleService-Info.plist */,
 				296E824E2AAE48FC005F7AE4 /* utils */,
 				291565162AAD098000C29F4F /* components */,
 				293A26002AA9914D003228B4 /* views */,
@@ -398,7 +401,7 @@
 			);
 			mainGroup = 291A22C92AA9356E00B6BC51;
 			packageReferences = (
-				293A25F12AA97942003228B4 /* XCRemoteSwiftPackageReference "Auth0.swift" */,
+				293A25F12AA97942003228B4 /* XCRemoteSwiftPackageReference "Auth0" */,
 				293A25F92AA985F5003228B4 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = 291A22D32AA9356E00B6BC51 /* Products */;
@@ -420,6 +423,7 @@
 				2972B2E92AAF9F3900E1AEB8 /* SPLASH-SCREEN.mp4 in Resources */,
 				291A22DD2AA9356F00B6BC51 /* Preview Assets.xcassets in Resources */,
 				293A25F62AA979FB003228B4 /* Auth0.plist in Resources */,
+				298FF48D2AF58DFC00DFEC5D /* GoogleService-Info.plist in Resources */,
 				291A22DA2AA9356F00B6BC51 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -703,8 +707,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -738,8 +742,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -867,7 +871,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		293A25F12AA97942003228B4 /* XCRemoteSwiftPackageReference "Auth0.swift" */ = {
+		293A25F12AA97942003228B4 /* XCRemoteSwiftPackageReference "Auth0" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/auth0/Auth0.swift";
 			requirement = {
@@ -888,7 +892,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		293A25F22AA97942003228B4 /* Auth0 */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 293A25F12AA97942003228B4 /* XCRemoteSwiftPackageReference "Auth0.swift" */;
+			package = 293A25F12AA97942003228B4 /* XCRemoteSwiftPackageReference "Auth0" */;
 			productName = Auth0;
 		};
 		293A25FA2AA985F5003228B4 /* SDWebImageSwiftUI */ = {

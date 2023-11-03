@@ -4,5 +4,6 @@
 *.xcworkspacedata
 *.xcuserstate
 *.xcuserstate
+.DS_Store
 LEOassist/LEOassist/resources/ApplicationSecrets.swift
 LEOassist/LEOassist/resources/client_696800960613-ce0stleua2he17pi694co3rekaoh3pat.apps.googleusercontent.com.plist
